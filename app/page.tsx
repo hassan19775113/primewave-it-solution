@@ -103,7 +103,7 @@ export default function Home() {
       <SiteHeader />
 
       <main>
-        <section id="hero" className="relative h-[500px] overflow-hidden sm:h-[600px] md:h-[700px]">
+        <section id="hero" className="relative h-[600px] overflow-hidden sm:h-[650px] md:h-[700px]">
           {/* Hero Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -114,7 +114,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
             />
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80" />
           </div>
 
           {/* Badges/Trust Icons - Top Right */}
@@ -129,26 +129,26 @@ export default function Home() {
 
           {/* Hero Content */}
           <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-4 sm:px-6">
-            <Reveal className="max-w-3xl space-y-4 sm:space-y-6" delay={0}>
-              <div className="mb-2 sm:mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white backdrop-blur">
+            <Reveal className="max-w-3xl space-y-5 sm:space-y-6" delay={0}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-white backdrop-blur-md font-semibold shadow-lg">
                 {t("home.hero.badge")}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] sm:leading-tight text-white drop-shadow-2xl">
                 {t("home.hero.title")}
               </h1>
-              <p className="text-base sm:text-lg leading-relaxed text-white/90">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-white/95 max-w-2xl drop-shadow-lg">
                 {t("home.hero.description")}
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-3 sm:pt-4">
                 <Link
                   href="/kontakt"
-                  className="text-center rounded-full bg-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-[#13294b] transition hover:-translate-y-0.5"
+                  className="text-center rounded-full bg-white px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-[#13294b] shadow-xl transition hover:-translate-y-1 hover:shadow-2xl"
                 >
                   {t("home.hero.cta1")}
                 </Link>
                 <Link
                   href="#leistungen"
-                  className="text-center rounded-full border border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition hover:bg-white/20"
+                  className="text-center rounded-full border-2 border-white bg-white/5 px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/20 hover:shadow-lg"
                 >
                   {t("home.hero.cta2")}
                 </Link>
