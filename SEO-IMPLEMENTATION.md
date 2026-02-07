@@ -479,6 +479,16 @@ Für weitere Details siehe:
    - Fixed: Now serving /public/sitemap.xml directly
    - Result: Google can fetch sitemap (Status 200)
    - Impact: Sitemap successfully indexed by Google
+
+4. commit 7811f24
+   feat: Optimize keywords with location-specific and long-tail variations
+   - Updated: app/layout.tsx metadata (Keywords 8 → 15)
+   - Optimized: Title with "Agentur" for better categorization
+   - Enhanced: Description with specific technologies
+   - Added: Location-based keywords ("Webdesign Köln", "Deutschland")
+   - Added: Long-tail keywords ("Online Shop Entwicklung", "UI/UX Design")
+   - Purpose: Better rankings for less competitive, specific search terms
+   - Impact: Improved search visibility in 3-7 days
 ```
 
 ---
@@ -489,19 +499,33 @@ Für weitere Details siehe:
 
 **Google Search Console**:
 - ✅ Domain Status: Verifiziert
-- ✅ Sitemap Status: Erfolgreich eingereicht
-- ⏳ Indexierungsrate: Anzahl indexierter URLs
-- ⏳ Coverage: Fehlerhafte vs. korrekte URLs
+- ✅ Sitemap Status: Erfolgreich eingereicht (~10 URLs)
+- ✅ Indexierungsrate: Homepage indexiert
+- ⏳ Coverage: Weitere URLs in Indexierung
+- ⏳ Performance: Impressionen für neue Keywords (nach 7-14 Tagen)
 
 **Google Search Results**:
-- ⏳ Sichtbarkeit für Keywords
+- ⏳ Sichtbarkeit für Long-Tail Keywords ("Webdesign Köln", "Next.js Entwicklung")
 - ⏳ CTR (Click-Through-Rate)
-- ⏳ Average Position in Search
+- ⏳ Average Position in Search (Ziel: Top 20 in 30 Tagen)
 
 **Website Analytics**:
 - ⏳ Organischer Traffic
 - ⏳ Top Landing Pages
 - ⏳ Bounce Rate
+
+### ⚠️ Wichtige Hinweise:
+
+**Indexierung beantragen - Google Quota**:
+- Google erlaubt nur 10-20 Indexierungsanfragen pro Tag
+- Bei "Kontingent überschritten": Nächsten Tag erneut versuchen
+- Alternativ: Automatisches Crawling abwarten (alle 3-7 Tage)
+
+**Realistische Zeitrahmen**:
+- **24-48h**: Google crawlt neue Keywords
+- **7-14 Tage**: Erste Impressionen in Search Console sichtbar
+- **30-90 Tage**: Erste Rankings für Long-Tail Keywords
+- **3-6 Monate**: Etablierte Rankings für kompetitive Keywords
 
 ---
 
@@ -516,7 +540,8 @@ Für weitere Details siehe:
 - [x] Sitemap-Abruf-Fehler behoben
 - [x] Website bei Google angemeldet
 - [x] Indexierung gestartet
-- [x] Dokumentation komplett
+- [x] Keywords optimiert (Long-Tail & Location-based)
+- [x] Dokumentation komplett und aktualisiert
 
 ---
 
@@ -535,5 +560,6 @@ Die Website:
 ---
 
 **Dokumentation erstellt**: 07.02.2026  
+**Letzte Aktualisierung**: 07.02.2026 (Keyword-Optimierung)  
 **Status**: ✅ Produktiv  
-**Version**: 1.0
+**Version**: 1.1
