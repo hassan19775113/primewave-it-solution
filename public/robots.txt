@@ -1,0 +1,24 @@
+# Robots.txt für Primewave IT Solution
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /.next
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://primewave-it-solution.vercel.app/sitemap.xml
+
+# Google-spezifisch
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
