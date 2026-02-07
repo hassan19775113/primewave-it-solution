@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { MdLanguage } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -9,6 +9,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function SiteHeader() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
@@ -50,17 +51,33 @@ export default function SiteHeader() {
         <nav className="hidden items-center gap-6 text-base text-slate-600 lg:flex">
           {navItems.map((item) => {
             if (hasSubmenu(item)) {
+              const isOpen = openDropdown === item.label;
               return (
                 <div
                   key={item.label}
                   className="relative"
-                  onMouseEnter={() => setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
+                  onMouseEnter={() => {
+                    if (closeTimeoutRef.current) {
+                      clearTimeout(closeTimeoutRef.current);
+                      closeTimeoutRef.current = null;
+                    }
+                    setOpenDropdown(item.label);
+                  }}
+                  onMouseLeave={() => {
+                    closeTimeoutRef.current = setTimeout(() => {
+                      setOpenDropdown(null);
+                    }, 180);
+                  }}
                 >
-                  <button className="flex items-center gap-1 py-2 transition hover:text-slate-900">
+                  <button
+                    className="flex items-center gap-1 py-2 transition hover:text-slate-900"
+                    onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                  >
                     {item.label}
                     <svg
-                      className="h-4 w-4"
+                      className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={2}
@@ -69,21 +86,31 @@ export default function SiteHeader() {
                       <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
-                  {openDropdown === item.label && (
-                    <div className="absolute left-0 top-full w-64 pt-2">
-                      <div className="rounded-xl border border-slate-200 bg-white py-2 shadow-lg">
-                        {item.submenu?.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            className="block px-4 py-2 text-base text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
-                            href={subItem.href}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
+                  <div
+                    className={`absolute left-0 top-full w-64 pt-2 origin-top transition-[max-height,opacity,transform] duration-[800ms] ease-in-out overflow-hidden ${
+                      isOpen
+                        ? "opacity-100 translate-y-0 max-h-96 pointer-events-auto"
+                        : "opacity-0 -translate-y-4 max-h-0 pointer-events-none"
+                    }`}
+                    onMouseEnter={() => {
+                      if (closeTimeoutRef.current) {
+                        clearTimeout(closeTimeoutRef.current);
+                        closeTimeoutRef.current = null;
+                      }
+                    }}
+                  >
+                    <div className="rounded-xl border border-slate-200 bg-white py-2 shadow-xl">
+                      {item.submenu?.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          className="block px-4 py-2 text-base text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
+                          href={subItem.href}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             }
@@ -168,20 +195,24 @@ export default function SiteHeader() {
                         <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </button>
-                    {openDropdown === item.label && (
-                      <div className="pl-4 space-y-1">
-                        {item.submenu?.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            className="block py-2 px-3 text-sm text-slate-600 hover:bg-slate-50 rounded-lg transition"
-                            href={subItem.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    <div
+                      className={`pl-4 space-y-1 overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
+                        openDropdown === item.label
+                          ? "max-h-64 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      {item.submenu?.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          className="block py-2 px-3 text-sm text-slate-600 hover:bg-slate-50 rounded-lg transition"
+                          href={subItem.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 );
               }
