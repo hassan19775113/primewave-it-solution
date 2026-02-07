@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     // Send email via Resend
     const { data, error } = await resend.emails.send({
       from: "Primewave IT Solution <onboarding@resend.dev>",
-      to: [process.env.CONTACT_EMAIL || "hassan19775113@gmail.com"], // Change to your Resend registered email
+      to: ["hassan19775113@outlook.com"], // Your Resend registered email
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `
