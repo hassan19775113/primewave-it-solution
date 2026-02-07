@@ -8,7 +8,7 @@ import SiteHeader from "../components/SiteHeader";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -74,7 +74,41 @@ export default function Home() {
     { label: t("home.stats.launch"), value: t("home.stats.launchValue") }
   ];
 
-  const logos = ["NABU Jewelery", "De La Rosa"];
+  // Industry Portfolio - Branchen-Expertise ohne Kundennamen (Bilingual)
+  const industries = [
+    {
+      name: "E-Commerce & Retail",
+      nameDe: "E-Commerce & Einzelhandel",
+      icon: "🛍️",
+      image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1400&auto=format&fit=crop",
+      description: "Online Shops, Fashion, Lifestyle",
+      descriptionDe: "Online-Shops, Fashion, Lifestyle"
+    },
+    {
+      name: "Gastronomy & Hotels",
+      nameDe: "Gastronomie & Hotellerie",
+      icon: "🍽️",
+      image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1400&auto=format&fit=crop",
+      description: "Restaurants, Cafés, Hotels",
+      descriptionDe: "Restaurants, Cafés, Hotels"
+    },
+    {
+      name: "Jewelry & Luxury Goods",
+      nameDe: "Schmuck & Luxusgüter",
+      icon: "💎",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1400&auto=format&fit=crop",
+      description: "Jewelry, Premium Brands",
+      descriptionDe: "Schmuck, Premium Marken"
+    },
+    {
+      name: "Real Estate",
+      nameDe: "Immobilien",
+      icon: "🏢",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1400&auto=format&fit=crop",
+      description: "Real Estate, Property Management",
+      descriptionDe: "Immobilien, Hausverwaltung"
+    }
+  ];
 
   const processSteps = [
     {
@@ -117,15 +151,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/80" />
           </div>
 
-          {/* Badges/Trust Icons - Top Right */}
-          <div className="absolute right-4 top-20 z-10 hidden gap-2 sm:flex sm:gap-4 sm:right-6 md:right-12 md:top-32">
-            <div className="rounded-lg bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-sm">
-              <p className="text-[10px] sm:text-xs font-semibold text-slate-900">NABU Jewelery</p>
-            </div>
-            <div className="rounded-lg bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-sm">
-              <p className="text-[10px] sm:text-xs font-semibold text-slate-900">De La Rosa</p>
-            </div>
-          </div>
+        
 
           {/* Hero Content */}
           <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-4 sm:px-6">
@@ -157,18 +183,49 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-slate-100/70 py-8 sm:py-10">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:gap-4 px-4 sm:px-6 md:flex-row md:items-center md:justify-between">
-            <Reveal className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-slate-500" delay={0}>
-              {t("home.trust")}
+        {/* Industry Portfolio Section - Branchen-Expertise (Bilingual) */}
+        <section className="border-t border-slate-200 bg-slate-100/70 py-12 sm:py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <Reveal delay={0}>
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-slate-500 text-center">
+                {t("home.trust")}
+              </p>
+              <h2 className="mt-3 sm:mt-4 text-xl sm:text-2xl md:text-3xl font-semibold text-[#13294b] text-center">
+                {language === "de" ? "Unsere Branchen-Expertise" : "Our Industry Expertise"}
+              </h2>
             </Reveal>
-            <Reveal className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm text-slate-600" delay={120}>
-              {logos.map((logo) => (
-                <span key={logo} className="rounded-full border border-slate-200 bg-white px-3 sm:px-4 py-1.5 sm:py-2">
-                  {logo}
-                </span>
+            
+            <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {industries.map((industry, index) => (
+                <Reveal
+                  key={industry.name}
+                  className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  delay={index * 60}
+                >
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
+                    <Image
+                      alt={language === "de" ? industry.nameDe : industry.name}
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      height={400}
+                      src={industry.image}
+                      width={400}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
+                    <div className="absolute bottom-3 left-3 text-3xl sm:text-4xl">
+                      {industry.icon}
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#13294b]">
+                      {language === "de" ? industry.nameDe : industry.name}
+                    </h3>
+                    <p className="mt-1 text-xs sm:text-sm text-slate-500">
+                      {language === "de" ? industry.descriptionDe : industry.description}
+                    </p>
+                  </div>
+                </Reveal>
               ))}
-            </Reveal>
+            </div>
           </div>
         </section>
 
