@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
 import SiteFooter from "../../components/SiteFooter";
@@ -8,6 +9,83 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function KontaktPage() {
   const { language } = useLanguage();
+
+  // Form state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    projectType: "",
+    message: ""
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: language === "de" 
+            ? "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen."
+            : "Thank you! Your message was sent successfully. We'll get back to you within 24 hours."
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          projectType: "",
+          message: ""
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: language === "de"
+            ? "Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail."
+            : "Sorry, an error occurred while sending. Please try again or contact us directly via email."
+        });
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: language === "de"
+          ? "Entschuldigung, beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt per E-Mail."
+          : "Sorry, an error occurred while sending. Please try again or contact us directly via email."
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const content = {
     de: {
@@ -223,17 +301,34 @@ export default function KontaktPage() {
                   </p>
                 </div>
 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  {/* Success/Error Messages */}
+                  {status.type && (
+                    <div
+                      className={`rounded-lg border p-4 ${
+                        status.type === "success"
+                          ? "border-green-200 bg-green-50 text-green-700"
+                          : "border-red-200 bg-red-50 text-red-700"
+                      }`}
+                    >
+                      {status.message}
+                    </div>
+                  )}
+
                   <div>
                     <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-600">
                       {t.nameLabel} *
                     </label>
                     <input
                       id="name"
+                      name="name"
                       type="text"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder={t.namePlaceholder}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       required
+                      disabled={isLoading}
                     />
                   </div>
 
@@ -243,10 +338,14 @@ export default function KontaktPage() {
                     </label>
                     <input
                       id="email"
+                      name="email"
                       type="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder={t.emailPlaceholder}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       required
+                      disabled={isLoading}
                     />
                   </div>
 
@@ -256,9 +355,13 @@ export default function KontaktPage() {
                     </label>
                     <input
                       id="phone"
+                      name="phone"
                       type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
                       placeholder={t.phonePlaceholder}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      disabled={isLoading}
                     />
                   </div>
 
@@ -268,9 +371,13 @@ export default function KontaktPage() {
                     </label>
                     <input
                       id="company"
+                      name="company"
                       type="text"
+                      value={formData.company}
+                      onChange={handleChange}
                       placeholder={t.companyPlaceholder}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                      disabled={isLoading}
                     />
                   </div>
 
@@ -280,8 +387,12 @@ export default function KontaktPage() {
                     </label>
                     <select
                       id="project"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       required
+                      disabled={isLoading}
                     >
                       {t.projectOptions.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -297,18 +408,26 @@ export default function KontaktPage() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder={t.messagePlaceholder}
                       rows={5}
                       className="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       required
+                      disabled={isLoading}
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full rounded-full bg-[#13294b] px-6 py-3 font-semibold text-white shadow-glow transition hover:bg-[#265396]"
+                    disabled={isLoading}
+                    className="w-full rounded-full bg-[#13294b] px-6 py-3 font-semibold text-white shadow-glow transition hover:bg-[#265396] disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {t.submitButton}
+                    {isLoading 
+                      ? (language === "de" ? "Wird gesendet..." : "Sending...") 
+                      : t.submitButton
+                    }
                   </button>
                 </form>
               </Reveal>

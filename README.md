@@ -1,22 +1,251 @@
-# Primewave IT Solution – Portfolio
+# Primewave IT Solution – Modern Business Website
 
-Moderne Portfolio-Website für Webdesign & Web Applications mit Next.js (App Router), React, TypeScript und Tailwind CSS.
+Professionelle Business-Website für IT-Dienstleistungen, entwickelt mit Next.js 14 (App Router), React 18, TypeScript und Tailwind CSS. Vollständig bilingual (Deutsch/Englisch) mit funktionierendem Kontaktformular.
 
-## Lokale Entwicklung
+## ✨ Features
 
-1. Abhängigkeiten installieren:
-   - npm install
-2. Dev-Server starten:
-   - npm run dev
-3. Im Browser öffnen:
-   - http://localhost:3000
+- 🌐 **Bilingual**: Vollständige Unterstützung für Deutsch und Englisch
+- 📧 **Funktionierendes Kontaktformular**: Integration mit Resend für E-Mail-Versand
+- ⚡ **Performance**: Server-Side Rendering mit Next.js 14
+- 🎨 **Modernes Design**: Responsive Design mit Tailwind CSS
+- 🔍 **SEO-Optimiert**: Statisch generierte Seiten für beste Performance
+- 📱 **Mobile-First**: Optimiert für alle Bildschirmgrößen
+- 🎭 **Animationen**: Smooth Reveal-Animationen mit Framer Motion-Konzept
 
-## Deployment mit Vercel
+## 🛠 Tech Stack
 
-1. Projekt zu GitHub pushen.
-2. In Vercel ein neues Projekt anlegen und das GitHub-Repo auswählen.
-3. Framework: **Next.js** (automatisch erkannt).
-4. Build & Output Settings unverändert lassen.
-5. Deploy klicken – fertig.
+- **Framework**: Next.js 14 (App Router)
+- **UI Library**: React 18
+- **Sprache**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons
+- **E-Mail**: Resend
+- **Deployment**: Vercel
 
-Vercel erstellt automatische Previews für Pull Requests und nutzt die Standard-Next.js-Optimierungen.
+## 📄 Seiten
+
+- **Home**: Übersichtsseite mit Services
+- **Leistungen**:
+  - Website-Entwicklung
+  - UI/UX Design
+  - Python Web Apps
+  - Online Shop
+  - SEO & Growth
+- **Technologien**: Tech-Stack-Übersicht
+- **Über uns**: Firmeninfo
+- **Kontakt**: Funktionierendes Kontaktformular
+- **Impressum & Datenschutz**: Rechtliche Seiten
+
+## 🚀 Lokale Entwicklung
+
+### Voraussetzungen
+
+- Node.js 18+ installiert
+- npm oder yarn Package Manager
+
+### Installation
+
+1. Repository klonen:
+```bash
+git clone https://github.com/hassan19775113/primewave-it-solution.git
+cd primewave-it-solution
+```
+
+2. Abhängigkeiten installieren:
+```bash
+npm install
+```
+
+3. Environment Variables einrichten:
+```bash
+# .env.example nach .env.local kopieren
+cp .env.example .env.local
+```
+
+4. Resend API Key konfigurieren:
+   - Gehe zu [Resend](https://resend.com) und erstelle einen kostenlosen Account
+   - Erstelle einen neuen API Key
+   - Füge den Key in `.env.local` ein:
+   ```
+   RESEND_API_KEY=re_your_actual_api_key_here
+   ```
+
+5. E-Mail-Empfänger anpassen:
+   - Öffne `app/api/contact/route.ts`
+   - Ändere die `to`-Adresse auf deine eigene E-Mail:
+   ```typescript
+   to: ["deine@email.de"],
+   ```
+
+6. Dev-Server starten:
+```bash
+npm run dev
+```
+
+7. Im Browser öffnen:
+```
+http://localhost:3000
+```
+
+## 📧 E-Mail-Konfiguration
+
+### Resend Setup (Empfohlen für Production)
+
+1. **Account erstellen**: [resend.com/signup](https://resend.com/signup)
+2. **Domain verifizieren** (optional, für Production):
+   - Gehe zu Domains → Add Domain
+   - Füge deine Domain hinzu und folge den DNS-Anweisungen
+3. **API Key erstellen**:
+   - Settings → API Keys → Create API Key
+   - Kopiere den Key in `.env.local`
+4. **Sender-Adresse** in `app/api/contact/route.ts` anpassen:
+   ```typescript
+   from: "Primewave <kontakt@deine-domain.de>"
+   ```
+
+**Wichtig**: Im Development kannst du `onboarding@resend.dev` nutzen (100 E-Mails/Tag gratis).
+
+### Alternative: EmailJS (Client-Side)
+
+Falls du keine Server-Side-Lösung willst, kannst du auch EmailJS verwenden:
+- Keine Environment Variables nötig
+- Funktioniert komplett im Browser
+- 200 E-Mails/Monat gratis
+
+## 🌐 Deployment auf Vercel
+
+### Automatisches Deployment
+
+1. **Repository zu GitHub pushen** (bereits erledigt ✓)
+
+2. **Vercel Account**: [vercel.com/signup](https://vercel.com/signup)
+
+3. **Neues Projekt**: 
+   - Click "Add New Project"
+   - Import `hassan19775113/primewave-it-solution`
+
+4. **Environment Variables in Vercel setzen**:
+   - Settings → Environment Variables
+   - Name: `RESEND_API_KEY`
+   - Value: Dein Resend API Key
+   - Environments: Production, Preview, Development
+
+5. **Deploy**: 
+   - Click "Deploy"
+   - Fertig in ~2 Minuten! 🎉
+
+### Manuelles Deployment
+
+```bash
+# Vercel CLI installieren
+npm install -g vercel
+
+# Deployment starten
+vercel
+
+# Production Deployment
+vercel --prod
+```
+
+## 🔧 Build & Scripts
+
+```bash
+# Development Server
+npm run dev
+
+# Production Build
+npm run build
+
+# Production Server lokal testen
+npm run start
+
+# Linting
+npm run lint
+```
+
+## 🌍 Sprachunterstützung
+
+Die Website unterstützt vollständig **Deutsch** und **Englisch**:
+
+- Sprachwechsel über Globe-Icon im Header
+- State-Management via React Context
+- Alle Seiten vollständig übersetzt
+- SEO-freundliche URLs (keine /de/ oder /en/ Prefixes)
+
+### Sprache ändern (Entwickler)
+
+Die Übersetzungen befinden sich direkt in den Page-Komponenten als `content`-Objekte:
+
+```typescript
+const content = {
+  de: {
+    title: "Deutscher Titel",
+    // ...
+  },
+  en: {
+    title: "English Title",
+    // ...
+  }
+};
+```
+
+## 📁 Projektstruktur
+
+```
+primewave-it-solution/
+├── app/                      # Next.js App Router
+│   ├── api/                  # API Routes
+│   │   └── contact/          # Kontaktformular API
+│   ├── leistungen/           # Service-Seiten
+│   ├── kontakt/              # Kontakt-Seite
+│   ├── uber-uns/             # Über-uns-Seite
+│   ├── impressum/            # Impressum
+│   ├── datenschutz/          # Datenschutz
+│   └── page.tsx              # Homepage
+├── components/               # React Components
+│   ├── SiteHeader.tsx        # Navigation
+│   ├── SiteFooter.tsx        # Footer
+│   ├── Reveal.tsx            # Animation Component
+│   └── ClientProviders.tsx   # Context Providers
+├── contexts/                 # React Contexts
+│   └── LanguageContext.tsx   # Sprachverwaltung
+├── public/                   # Statische Assets
+└── .env.example              # Environment Variables Template
+```
+
+## 🎨 Styling
+
+- **Tailwind CSS**: Utility-First CSS Framework
+- **Custom Colors**: Brand-Farben in `tailwind.config.ts`
+- **Responsive**: Mobile-First-Ansatz
+- **Dark Mode**: Vorbereitet (aktuell nicht aktiv)
+
+## 📈 Performance
+
+Die Website ist für maximale Performance optimiert:
+
+- ✅ Server-Side Rendering (SSR)
+- ✅ Statisch generierte Seiten
+- ✅ Optimierte Images (Next.js Image)
+- ✅ Code-Splitting
+- ✅ Tree-Shaking
+- ✅ ~87 KB First Load JS
+
+## 🤝 Contributing
+
+Contributions sind willkommen! Bitte erstelle einen Pull Request oder öffne ein Issue.
+
+## 📝 Lizenz
+
+Privates Projekt - Alle Rechte vorbehalten.
+
+## 📞 Kontakt
+
+**Primewave IT Solution**
+- 🌐 Website: [In Production]
+- 📧 E-Mail: info@primewave-it.de
+- 💼 GitHub: [@hassan19775113](https://github.com/hassan19775113)
+
+---
+
+**Entwickelt mit ❤️ und Next.js**
