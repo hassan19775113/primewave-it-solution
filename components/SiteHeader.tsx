@@ -6,15 +6,36 @@ import { MdLanguage } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
 
+/**
+ * Site Header Component
+ * 
+ * Features:
+ * - Responsive navigation with mobile hamburger menu
+ * - Animated dropdown for "Webentwicklung" menu (800ms top-to-bottom)
+ * - Language switcher (DE/EN) with globe icon
+ * - Sticky header with backdrop blur effect
+ * - Desktop: Hover-based dropdown with 180ms close delay
+ * - Mobile: Click/tap-based collapsible menu
+ */
 export default function SiteHeader() {
+  // State: Welches Dropdown ist geöffnet (Desktop & Mobile)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  
+  // State: Mobile Menu visibility
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Timeout Ref für verzögertes Schließen des Desktop-Dropdowns
+  // Verhindert zu schnelles Schließen beim Maus-Bewegen zwischen Button und Dropdown
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  
+  // Mehrsprachigkeit: language = aktuelle Sprache, setLanguage = Umschalten, t = Übersetzungs-Funktion
   const { language, setLanguage, t } = useLanguage();
 
+  // Navigation Items - Dynamisch mit Übersetzungen aus LanguageContext
   const navItems = [
     { href: "/", label: t("nav.home") },
     {
+      // Webentwicklung hat Submenu mit 5 Service-Seiten
       label: t("nav.webdev"),
       submenu: [
         { href: "/leistungen/webentwicklung/website", label: t("nav.webdesign") },
@@ -29,6 +50,7 @@ export default function SiteHeader() {
     { href: "/kontakt", label: t("nav.contact") }
   ];
 
+  // TypeScript Type Guard: Prüft ob ein Nav-Item ein Submenu hat
   const hasSubmenu = (
     item: (typeof navItems)[number]
   ): item is { label: string; submenu: { href: string; label: string }[] } =>
@@ -36,7 +58,9 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/80 backdrop-blur">
+      {/* Container: Responsive max-width mit Padding px-4 (mobile) → px-6 (sm+) */}
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+        {/* Logo Section mit Gradient Badge */}
         <Link className="flex items-center gap-2 sm:gap-3" href="/">
           <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#13294b] to-[#265396] text-base sm:text-lg font-bold text-white shadow-md">
             PW
@@ -47,15 +71,17 @@ export default function SiteHeader() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation: hidden auf Mobile, sichtbar ab lg breakpoint (1024px+) */}
         <nav className="hidden items-center gap-6 text-base text-slate-600 lg:flex">
           {navItems.map((item) => {
             if (hasSubmenu(item)) {
               const isOpen = openDropdown === item.label;
               return (
+                // Dropdown Menu Item mit 800ms Animation
                 <div
                   key={item.label}
                   className="relative"
+                  // Desktop Hover-Handler mit 180ms Verzögerung beim Schließen
                   onMouseEnter={() => {
                     if (closeTimeoutRef.current) {
                       clearTimeout(closeTimeoutRef.current);
@@ -76,6 +102,7 @@ export default function SiteHeader() {
                     aria-haspopup="true"
                   >
                     {item.label}
+                    {/* Arrow Icon: 0° → 180° Rotation beim Öffnen */}
                     <svg
                       className={`h-4 w-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
                       fill="none"
@@ -86,6 +113,13 @@ export default function SiteHeader() {
                       <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
+                  {/* Dropdown Container mit Top-to-Bottom Animation
+                   * duration-[800ms]: Langsame, sichtbare Animation
+                   * max-height: 0 → 24rem für "Aufklappen"-Effekt
+                   * -translate-y-4 → translate-y-0: Bewegung von oben nach unten
+                   * opacity: 0 → 100: Sanftes Ein-/Ausblenden
+                   * overflow-hidden: Verhindert sichtbaren Overflow während Animation
+                   */}
                   <div
                     className={`absolute left-0 top-full w-64 pt-2 origin-top transition-[max-height,opacity,transform] duration-[800ms] ease-in-out overflow-hidden ${
                       isOpen

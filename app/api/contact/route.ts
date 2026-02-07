@@ -1,12 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
+/**
+ * Contact Form API Route
+ * 
+ * POST /api/contact
+ * 
+ * Features:
+ * - Sendet Kontaktformular-Daten via Resend Email Service
+ * - Verwendet Environment Variable für Email-Empfänger (CONTACT_EMAIL)
+ * - Fallback zu "hassan19775113@outlook.com" wenn Variable fehlt
+ * - Server-side Validierung der Pflichtfelder
+ * - HTML-formatierte E-Mails mit Firmenfarben
+ * - Ausführliches Error Logging für Debugging
+ * - Bilinguale Fehlermeldungen (DE/EN)
+ */
 export async function POST(request: NextRequest) {
   try {
     console.log("📧 Contact form submitted");
     console.log("🔑 RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
 
-    // Check if API key is configured
+    // Prüfung: Ist Resend API Key konfiguriert?
     if (!process.env.RESEND_API_KEY) {
       console.error("❌ RESEND_API_KEY is not configured in Environment Variables");
       return NextResponse.json(
@@ -24,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     console.log("📝 Form data received:", { name, email, projectType });
 
-    // Validation
+    // Validierung: Pflichtfelder prüfen
     if (!name || !email || !message) {
      
       return NextResponse.json(
@@ -35,11 +49,12 @@ export async function POST(request: NextRequest) {
 
     console.log("📧 Sending email via Resend...");
 
-    // Send email via Resend
+    // Email senden via Resend
+    // WICHTIG: to-Adresse verwendet Environment Variable mit Fallback
     const { data, error } = await resend.emails.send({
       from: "Primewave IT Solution <onboarding@resend.dev>",
-      to: [process.env.CONTACT_EMAIL || "hassan19775113@outlook.com"],
-      replyTo: email,
+      to: [process.env.CONTACT_EMAIL || "hassan19775113@outlook.com"], // Environment Variable!
+      replyTo: email, // Antwort geht direkt an Absender
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

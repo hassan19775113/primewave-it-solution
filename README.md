@@ -9,8 +9,11 @@ Professionelle Business-Website für IT-Dienstleistungen, entwickelt mit Next.js
 - ⚡ **Performance**: Server-Side Rendering mit Next.js 14
 - 🎨 **Modernes Design**: Responsive Design mit Tailwind CSS
 - 🔍 **SEO-Optimiert**: Statisch generierte Seiten für beste Performance
-- 📱 **Mobile-First**: Optimiert für alle Bildschirmgrößen
-- 🎭 **Animationen**: Smooth Reveal-Animationen mit Framer Motion-Konzept
+- 📱 **Mobile-First**: Vollständig responsive für alle Displaygrößen (320px - 1440px+)
+- 🍔 **Mobile Navigation**: Hamburger-Menu mit smooth Animationen
+- ✨ **Animated Dropdown**: 800ms Top-to-Bottom Animation für Webentwicklung-Menu
+- 🎭 **Smooth Animations**: Optimierte Hover-Effekte und Transitions
+- 🌈 **Glassmorphism**: Moderne backdrop-blur Effekte im Design
 
 ## 🛠 Tech Stack
 
@@ -68,24 +71,35 @@ cp .env.example .env.local
    - Füge den Key in `.env.local` ein:
    ```
    RESEND_API_KEY=re_your_actual_api_key_here
+   CONTACT_EMAIL=deine@email.de
    ```
 
-5. E-Mail-Empfänger anpassen:
-   - Öffne `app/api/contact/route.ts`
-   - Ändere die `to`-Adresse auf deine eigene E-Mail:
-   ```typescript
-   to: ["deine@email.de"],
-   ```
-
-6. Dev-Server starten:
+5. Dev-Server starten:
 ```bash
 npm run dev
 ```
 
-7. Im Browser öffnen:
+6. Im Browser öffnen:
 ```
 http://localhost:3000
 ```
+
+## ⚙️ Environment Variables
+
+Das Projekt benötigt folgende Environment Variables:
+
+| Variable | Beschreibung | Beispiel | Erforderlich |
+|----------|--------------|----------|--------------|
+| `RESEND_API_KEY` | API Key von Resend für E-Mail-Versand | `re_xxx...` | Ja |
+| `CONTACT_EMAIL` | Empfänger-Adresse für Kontaktformular | `info@firma.de` | Nein* |
+
+*Fallback: `hassan19775113@outlook.com`
+
+### Für Vercel Deployment:
+1. Gehe zu Projekt-Settings → Environment Variables
+2. Füge `RESEND_API_KEY` und `CONTACT_EMAIL` hinzu
+3. Wähle alle Environments (Production, Preview, Development)
+4. Redeploy das Projekt
 
 ## 📧 E-Mail-Konfiguration
 
@@ -126,8 +140,9 @@ Falls du keine Server-Side-Lösung willst, kannst du auch EmailJS verwenden:
 
 4. **Environment Variables in Vercel setzen**:
    - Settings → Environment Variables
-   - Name: `RESEND_API_KEY`
-   - Value: Dein Resend API Key
+   - Füge hinzu:
+     - `RESEND_API_KEY` = Dein Resend API Key
+     - `CONTACT_EMAIL` = Deine Empfänger-E-Mail
    - Environments: Production, Preview, Development
 
 5. **Deploy**: 
@@ -234,6 +249,21 @@ Die Website ist für maximale Performance optimiert:
 ## 🤝 Contributing
 
 Contributions sind willkommen! Bitte erstelle einen Pull Request oder öffne ein Issue.
+
+## 📚 Dokumentation
+
+Für detaillierte Entwicklungs-Dokumentation, siehe [ENTWICKLUNG.md](ENTWICKLUNG.md):
+- Vollständige Feature-Übersicht
+- Deployment-Anleitung
+- Konfigurationsdetails
+- Code-Struktur und Kommentare
+- Testing-Prozeduren
+- Bekannte Probleme und Lösungen
+- Changelog
+
+## 📝 License
+
+© 2024 Primewave IT Solution. Alle Rechte vorbehalten.
 
 ## 📝 Lizenz
 
