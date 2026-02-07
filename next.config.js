@@ -72,19 +72,6 @@ const nextConfig = {
     ];
   },
 
-  // Rewrite URLs ohne den Pfad zu ändern
-  rewrites: async () => {
-    return {
-      beforeFiles: [
-        // Sitemap rewrite
-        {
-          source: '/sitemap.xml',
-          destination: '/api/sitemap'
-        }
-      ]
-    };
-  },
-
   // Compression
   compress: true,
 
