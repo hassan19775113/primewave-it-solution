@@ -3,11 +3,17 @@ import { Resend } from "resend";
 
 export async function POST(request: NextRequest) {
   try {
+    console.log("📧 Contact form submitted");
+    console.log("🔑 RESEND_API_KEY exists:", !!process.env.RESEND_API_KEY);
+
     // Check if API key is configured
     if (!process.env.RESEND_API_KEY) {
-      console.error("RESEND_API_KEY is not configured");
+      console.error("❌ RESEND_API_KEY is not configured in Environment Variables");
       return NextResponse.json(
-        { error: "E-Mail-Service ist nicht konfiguriert. Bitte kontaktieren Sie uns direkt per E-Mail." },
+        { 
+          error: "E-Mail-Service ist nicht konfiguriert. Bitte kontaktieren Sie uns direkt per E-Mail.",
+          debug: "RESEND_API_KEY missing"
+        },
         { status: 503 }
       );
     }
@@ -16,18 +22,23 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, email, phone, company, projectType, message } = body;
 
+    console.log("📝 Form data received:", { name, email, projectType });
+
     // Validation
     if (!name || !email || !message) {
+      console.error("❌ Validation failed:", { name: !!name, email: !!email, message: !!message });
       return NextResponse.json(
         { error: "Name, Email und Nachricht sind erforderlich" },
         { status: 400 }
       );
     }
 
+    console.log("📧 Sending email via Resend...");
+
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: "Primewave IT Solution <onboarding@resend.dev>", // Update this with your verified domain
-      to: ["hassan19775113@outlook.com"], // Your email address
+      from: "Primewave IT Solution <onboarding@resend.dev>",
+      to: ["info@primewave-it.de"],
       replyTo: email,
       subject: `Neue Kontaktanfrage von ${name}`,
       html: `
@@ -58,21 +69,29 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("❌ Resend error:", error);
       return NextResponse.json(
-        { error: "Fehler beim Senden der E-Mail" },
+        { 
+          error: "Fehler beim Senden der E-Mail",
+          debug: JSON.stringify(error)
+        },
         { status: 500 }
       );
     }
+
+    console.log("✅ Email sent successfully:", data);
 
     return NextResponse.json(
       { success: true, message: "E-Mail erfolgreich gesendet", data },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("❌ Unexpected error:", error);
     return NextResponse.json(
-      { error: "Interner Serverfehler" },
+      { 
+        error: "Interner Serverfehler",
+        debug: error instanceof Error ? error.message : "Unknown error"
+      },
       { status: 500 }
     );
   }
