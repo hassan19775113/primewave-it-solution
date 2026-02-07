@@ -409,13 +409,13 @@ export default function SeoPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-brand-700">
+            <Reveal className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 py-1.5 text-xs sm:px-4 sm:py-2 uppercase tracking-[0.35em] text-brand-700">
               {t.heroBadge}
             </Reveal>
             <Reveal className="mb-6 space-y-6" delay={60}>
-              <h1 className="text-5xl font-bold leading-tight md:text-6xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-[#13294b] to-[#265396] bg-clip-text text-transparent">
                   {t.heroTitle}
                 </span>
@@ -425,16 +425,16 @@ export default function SeoPage() {
               </p>
             </Reveal>
 
-            <Reveal className="flex flex-wrap gap-4" delay={120}>
+            <Reveal className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4" delay={120}>
               <Link
                 href="/kontakt"
-                className="rounded-full bg-[#13294b] px-8 py-3 font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#265396]"
+                className="w-full sm:w-auto rounded-full bg-[#13294b] px-8 py-3 font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-[#265396] text-center"
               >
                 {t.ctaPrimary}
               </Link>
               <Link
                 href="/leistungen/webentwicklung/website"
-                className="rounded-full border border-brand-200 px-8 py-3 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
+                className="w-full sm:w-auto rounded-full border border-brand-200 px-8 py-3 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50 text-center"
               >
                 {t.ctaSecondary}
               </Link>
@@ -443,10 +443,10 @@ export default function SeoPage() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section id="benefits" className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.benefitsTitle}
               </h2>
               <p className="mt-4 text-lg text-slate-600">
@@ -454,11 +454,11 @@ export default function SeoPage() {
               </p>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {t.benefits.map((benefit, idx) => (
                 <Reveal
                   key={benefit.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   delay={idx * 60}
                 >
                   <h3 className="mb-3 text-xl font-semibold text-[#13294b]">
@@ -472,19 +472,19 @@ export default function SeoPage() {
         </section>
 
         {/* Features Section */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.featuresTitle}
               </h2>
             </Reveal>
 
             <Reveal
-              className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-10 md:p-16"
+              className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-6 sm:p-10 md:p-16"
               delay={120}
             >
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {t.features.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
                     <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" />
@@ -497,22 +497,22 @@ export default function SeoPage() {
         </section>
 
         {/* Process Section */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.processTitle}
               </h2>
             </Reveal>
 
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
               {t.processSteps.map((step, idx) => (
                 <Reveal
                   key={step.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+                  className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 md:p-8"
                   delay={idx * 80}
                 >
-                  <h3 className="mb-2 text-2xl font-bold text-[#13294b]">
+                  <h3 className="mb-2 text-xl sm:text-2xl font-bold text-[#13294b]">
                     {step.title}
                   </h3>
                   <p className="text-slate-600">{step.description}</p>
@@ -523,19 +523,19 @@ export default function SeoPage() {
         </section>
 
         {/* Use Cases Section */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.useCasesTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
               {t.useCases.map((useCase, idx) => (
                 <Reveal
                   key={useCase.title}
-                  className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+                  className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md"
                   delay={idx * 80}
                 >
                   <div className="relative h-64 overflow-hidden">
@@ -548,8 +548,8 @@ export default function SeoPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
                   </div>
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    <h3 className="text-2xl font-bold text-white">{useCase.title}</h3>
+                  <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white">{useCase.title}</h3>
                     <p className="mt-2 text-slate-200">{useCase.description}</p>
                   </div>
                 </Reveal>
@@ -559,19 +559,19 @@ export default function SeoPage() {
         </section>
 
         {/* Tool Stack Section */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.toolsTitle}
               </h2>
             </Reveal>
 
             <Reveal
-              className="rounded-3xl border border-slate-200 bg-white p-10 md:p-16"
+              className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-6 sm:p-10 md:p-16"
               delay={120}
             >
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {t.techStack.map((tool) => (
                   <div key={tool} className="flex items-start gap-3">
                     <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" />
@@ -584,12 +584,12 @@ export default function SeoPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="border-b border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-3">
               {t.stats.map((stat) => (
                 <Reveal key={stat.label} className="text-center" delay={0}>
-                  <p className="text-5xl font-bold text-white md:text-6xl">
+                  <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
                     {stat.value}
                   </p>
                   <p className="mt-2 text-sm uppercase tracking-[0.2em] text-white/80">
@@ -602,23 +602,23 @@ export default function SeoPage() {
         </section>
 
         {/* Pricing Section */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.pricingTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
               {t.pricing.map((plan, idx) => (
                 <Reveal
                   key={plan.name}
-                  className="relative flex flex-col rounded-2xl border border-slate-200 bg-slate-50 p-8 transition hover:-translate-y-1"
+                  className="relative flex flex-col rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 transition hover:-translate-y-1"
                   delay={idx * 80}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-4 py-1 text-xs font-semibold text-white">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-3 py-1 text-xs sm:px-4 font-semibold text-white">
                       {t.popularBadge}
                     </div>
                   )}
@@ -643,19 +643,19 @@ export default function SeoPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-12 sm:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.faqTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-6 md:max-w-3xl md:mx-auto">
+            <div className="grid gap-4 sm:gap-6 md:max-w-3xl md:mx-auto">
               {t.faqs.map((faq, idx) => (
                 <Reveal
                   key={faq.q}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-6"
+                  className="overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-5 sm:p-6"
                   delay={idx * 60}
                 >
                   <h3 className="font-semibold text-[#13294b]">{faq.q}</h3>
@@ -667,10 +667,10 @@ export default function SeoPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <Reveal className="mb-8 space-y-4" delay={0}>
-              <h2 className="text-4xl font-bold text-white md:text-5xl">
+            <Reveal className="mb-6 sm:mb-8 space-y-3 sm:space-y-4" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 {t.ctaTitle}
               </h2>
               <p className="text-lg text-white/90">
@@ -678,16 +678,16 @@ export default function SeoPage() {
               </p>
             </Reveal>
 
-            <Reveal className="flex flex-wrap justify-center gap-4" delay={120}>
+            <Reveal className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4" delay={120}>
               <Link
                 href="/kontakt"
-                className="rounded-full bg-white px-8 py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5"
+                className="w-full sm:w-auto rounded-full bg-white px-8 py-3 sm:py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5 text-center"
               >
                 {t.ctaButton}
               </Link>
               <Link
                 href="/"
-                className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white/20"
+                className="w-full sm:w-auto rounded-full border border-white px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/20 text-center"
               >
                 {t.ctaBack}
               </Link>

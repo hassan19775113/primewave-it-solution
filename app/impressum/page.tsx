@@ -118,14 +118,14 @@ export default function ImpressumPage() {
     <div className="relative min-h-screen bg-slate-50 text-slate-900">
       <SiteHeader />
 
-      <main className="mx-auto max-w-4xl px-6 py-20">
-        <h1 className="mb-8 text-4xl font-bold text-[#13294b] md:text-5xl">
+      <main className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+        <h1 className="mb-6 sm:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
           {t.title}
         </h1>
 
-        <div className="space-y-8 text-slate-700">
+        <div className="space-y-6 sm:space-y-8 text-slate-700">
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section1.title}
             </h2>
             <p className="mb-2 font-medium">{t.section1.company}</p>
@@ -135,25 +135,25 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section2.title}
             </h2>
-            <p>{t.section2.phone}</p>
-            <p>{t.section2.email}</p>
+            <p className="text-sm sm:text-base">{t.section2.phone}</p>
+            <p className="text-sm sm:text-base">{t.section2.email}</p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section3.title}
             </h2>
-            <p>
+            <p className="text-sm sm:text-base">
               {t.section3.desc}
             </p>
-            <p>{t.section3.number}</p>
+            <p className="text-sm sm:text-base">{t.section3.number}</p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section4.title}
             </h2>
             <p>{t.section4.name}</p>
@@ -162,75 +162,75 @@ export default function ImpressumPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section5.title}
             </h2>
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
               {t.section5.text1}
             </p>
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 break-words">
               <a 
                 href="https://ec.europa.eu/consumers/odr/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-brand-600 hover:text-brand-700 underline"
+                className="text-xs sm:text-sm text-brand-600 hover:text-brand-700 underline"
               >
                 https://ec.europa.eu/consumers/odr/
               </a>
             </p>
-            <p>{t.section5.text2}</p>
+            <p className="text-sm sm:text-base">{t.section5.text2}</p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section6.title}
             </h2>
-            <p>
+            <p className="text-sm sm:text-base">
               {t.section6.text}
             </p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section7.title}
             </h2>
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
               {t.section7.text1}
             </p>
-            <p>
+            <p className="text-sm sm:text-base">
               {t.section7.text2}
             </p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section8.title}
             </h2>
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
               {t.section8.text1}
             </p>
-            <p>
+            <p className="text-sm sm:text-base">
               {t.section8.text2}
             </p>
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-semibold text-[#13294b]">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-semibold text-[#13294b]">
               {t.section9.title}
             </h2>
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-sm sm:text-base">
               {t.section9.text1}
             </p>
-            <p>
+            <p className="text-sm sm:text-base">
               {t.section9.text2}
             </p>
           </section>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           <Link
             href="/"
-            className="inline-flex rounded-full border border-brand-200 px-6 py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50"
+            className="inline-flex w-full sm:w-auto rounded-full border border-brand-200 px-4 sm:px-6 py-2.5 sm:py-3 font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50 justify-center"
           >
             {t.backButton}
           </Link>

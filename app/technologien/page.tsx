@@ -227,16 +227,16 @@ export default function TechnologienPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-br from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white backdrop-blur">
+            <Reveal className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 text-[0.65rem] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.35em] text-white backdrop-blur">
               {hero.heroBadge}
             </Reveal>
-            <Reveal className="mb-6 space-y-6" delay={60}>
-              <h1 className="text-5xl font-bold leading-tight text-white md:text-6xl">
+            <Reveal className="mb-4 sm:mb-6 space-y-4 sm:space-y-6" delay={60}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                 {hero.heroTitle}
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/90">
+              <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-white/90">
                 {hero.heroDesc}
               </p>
             </Reveal>
@@ -244,33 +244,33 @@ export default function TechnologienPage() {
         </section>
 
         {/* Services Overview */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-8 sm:mb-12 md:mb-16 text-center" delay={0}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#13294b]">
                 {t.servicesTitle}
               </h2>
-              <p className="mt-4 text-lg text-slate-600">
+              <p className="mt-3 sm:mt-4 text-base sm:text-lg text-slate-600">
                 {t.servicesSubtitle}
               </p>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, idx) => (
                 <Reveal
                   key={service.title}
-                  className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-6 transition hover:-translate-y-1 hover:shadow-lg"
                   delay={idx * 60}
                 >
-                  <h3 className="mb-3 text-xl font-bold text-[#13294b]">
+                  <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-bold text-[#13294b]">
                     {service.title}
                   </h3>
-                  <p className="mb-4 text-slate-600">{service.description}</p>
-                  <div className="mb-4 flex flex-wrap gap-2">
+                  <p className="mb-3 sm:mb-4 text-sm sm:text-base text-slate-600">{service.description}</p>
+                  <div className="mb-3 sm:mb-4 flex flex-wrap gap-1.5 sm:gap-2">
                     {service.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700"
+                        className="rounded-full bg-brand-100 px-2 sm:px-3 py-0.5 sm:py-1 text-[0.65rem] sm:text-xs font-medium text-brand-700"
                       >
                         {tech}
                       </span>
@@ -278,7 +278,7 @@ export default function TechnologienPage() {
                   </div>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition hover:text-brand-700"
+                    className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold text-brand-600 transition hover:text-brand-700"
                   >
                     {language === "de" ? "Mehr erfahren" : "Learn more"}
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -295,29 +295,29 @@ export default function TechnologienPage() {
         {technologies.map((category, catIdx) => (
           <section
             key={category.category}
-            className={`border-b border-slate-200 px-6 py-20 md:py-32 ${
+            className={`border-b border-slate-200 px-4 sm:px-6 py-12 sm:py-16 md:py-20 ${
               catIdx % 2 === 0 ? 'bg-slate-50' : 'bg-white'
             }`}
           >
             <div className="mx-auto max-w-6xl">
-              <Reveal className="mb-12" delay={0}>
-                <h2 className="text-3xl font-bold text-[#13294b] md:text-4xl">
+              <Reveal className="mb-6 sm:mb-8 md:mb-12" delay={0}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#13294b]">
                   {category.category}
                 </h2>
               </Reveal>
 
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-2 lg:grid-cols-4">
                 {category.items.map((tech, idx) => (
                   <Reveal
                     key={tech.name}
-                    className="group rounded-2xl border border-slate-200 bg-white p-6 text-center transition hover:-translate-y-1 hover:shadow-md"
+                    className="group rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 md:p-6 text-center transition hover:-translate-y-1 hover:shadow-md"
                     delay={idx * 60}
                   >
-                    <div className="mb-4 flex justify-center">{tech.icon}</div>
-                    <h3 className="mb-2 text-xl font-bold text-[#13294b]">
+                    <div className="mb-2 sm:mb-3 md:mb-4 flex justify-center">{tech.icon}</div>
+                    <h3 className="mb-1 sm:mb-2 text-base sm:text-lg md:text-xl font-bold text-[#13294b]">
                       {tech.name}
                     </h3>
-                    <p className="text-sm text-slate-600">{tech.description}</p>
+                    <p className="text-xs sm:text-sm text-slate-600">{tech.description}</p>
                   </Reveal>
                 ))}
               </div>
@@ -326,27 +326,27 @@ export default function TechnologienPage() {
         ))}
 
         {/* CTA Section */}
-        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <Reveal className="mb-8 space-y-4" delay={0}>
-              <h2 className="text-4xl font-bold text-white md:text-5xl">
+            <Reveal className="mb-6 sm:mb-8 space-y-3 sm:space-y-4" delay={0}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                 {cta.ctaTitle}
               </h2>
-              <p className="text-lg text-white/90">
+              <p className="text-base sm:text-lg text-white/90">
                 {cta.ctaDesc}
               </p>
             </Reveal>
 
-            <Reveal className="flex flex-wrap justify-center gap-4" delay={120}>
+            <Reveal className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4" delay={120}>
               <Link
                 href="/kontakt"
-                className="rounded-full bg-white px-8 py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5"
+                className="w-full sm:w-auto rounded-full bg-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5"
               >
                 {cta.ctaPrimary}
               </Link>
               <Link
                 href="/"
-                className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white/20"
+                className="w-full sm:w-auto rounded-full border border-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:bg-white/20"
               >
                 {cta.ctaSecondary}
               </Link>

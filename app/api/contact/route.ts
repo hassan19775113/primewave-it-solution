@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
     // Validation
     if (!name || !email || !message) {
-      console.error("❌ Validation failed:", { name: !!name, email: !!email, message: !!message });
+     
       return NextResponse.json(
         { error: "Name, Email und Nachricht sind erforderlich" },
         { status: 400 }

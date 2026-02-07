@@ -103,7 +103,7 @@ export default function Home() {
       <SiteHeader />
 
       <main>
-        <section id="hero" className="relative h-[600px] overflow-hidden md:h-[700px]">
+        <section id="hero" className="relative h-[500px] overflow-hidden sm:h-[600px] md:h-[700px]">
           {/* Hero Background Image */}
           <div className="absolute inset-0">
             <Image
@@ -118,37 +118,37 @@ export default function Home() {
           </div>
 
           {/* Badges/Trust Icons - Top Right */}
-          <div className="absolute right-6 top-24 z-10 flex gap-4 md:right-12 md:top-32">
-            <div className="rounded-lg bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm">
-              <p className="text-xs font-semibold text-slate-900">NABU Jewelery</p>
+          <div className="absolute right-4 top-20 z-10 hidden gap-2 sm:flex sm:gap-4 sm:right-6 md:right-12 md:top-32">
+            <div className="rounded-lg bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-sm">
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-900">NABU Jewelery</p>
             </div>
-            <div className="rounded-lg bg-white/95 px-4 py-2 shadow-lg backdrop-blur-sm">
-              <p className="text-xs font-semibold text-slate-900">De La Rosa</p>
+            <div className="rounded-lg bg-white/95 px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-sm">
+              <p className="text-[10px] sm:text-xs font-semibold text-slate-900">De La Rosa</p>
             </div>
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-6">
-            <Reveal className="max-w-3xl space-y-6" delay={0}>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white backdrop-blur">
+          <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center px-4 sm:px-6">
+            <Reveal className="max-w-3xl space-y-4 sm:space-y-6" delay={0}>
+              <div className="mb-2 sm:mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-white backdrop-blur">
                 {t("home.hero.badge")}
               </div>
-              <h1 className="text-5xl font-bold leading-tight text-white md:text-6xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                 {t("home.hero.title")}
               </h1>
-              <p className="text-lg leading-relaxed text-white/90">
+              <p className="text-base sm:text-lg leading-relaxed text-white/90">
                 {t("home.hero.description")}
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                 <Link
                   href="/kontakt"
-                  className="rounded-full bg-white px-8 py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5"
+                  className="text-center rounded-full bg-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-[#13294b] transition hover:-translate-y-0.5"
                 >
                   {t("home.hero.cta1")}
                 </Link>
                 <Link
                   href="#leistungen"
-                  className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white/20"
+                  className="text-center rounded-full border border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition hover:bg-white/20"
                 >
                   {t("home.hero.cta2")}
                 </Link>
@@ -157,14 +157,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-slate-100/70 py-10">
-          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 md:flex-row md:items-center md:justify-between">
-            <Reveal className="text-xs uppercase tracking-[0.35em] text-slate-500" delay={0}>
+        <section className="border-t border-slate-200 bg-slate-100/70 py-8 sm:py-10">
+          <div className="mx-auto flex max-w-6xl flex-col gap-3 sm:gap-4 px-4 sm:px-6 md:flex-row md:items-center md:justify-between">
+            <Reveal className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-slate-500" delay={0}>
               {t("home.trust")}
             </Reveal>
-            <Reveal className="flex flex-wrap gap-6 text-sm text-slate-600" delay={120}>
+            <Reveal className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm text-slate-600" delay={120}>
               {logos.map((logo) => (
-                <span key={logo} className="rounded-full border border-slate-200 bg-white px-4 py-2">
+                <span key={logo} className="rounded-full border border-slate-200 bg-white px-3 sm:px-4 py-1.5 sm:py-2">
                   {logo}
                 </span>
               ))}
@@ -172,10 +172,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-white py-16">
-          <div className="mx-auto grid max-w-6xl gap-6 px-6 md:grid-cols-2">
-            <Reveal className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md" delay={0}>
-              <div className="relative h-64 overflow-hidden rounded-2xl">
+        <section className="border-t border-slate-200 bg-white py-12 sm:py-16">
+          <div className="mx-auto grid max-w-6xl gap-4 sm:gap-6 px-4 sm:px-6 md:grid-cols-2">
+            <Reveal className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md" delay={0}>
+              <div className="relative h-48 sm:h-64 overflow-hidden rounded-xl sm:rounded-2xl">
                 <Image
                   alt={t("home.highlight1.imageAlt")}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -184,15 +184,15 @@ export default function Home() {
                   width={720}
                 />
               </div>
-              <h3 className="mt-5 text-2xl font-semibold text-[#13294b]">
+              <h3 className="mt-4 sm:mt-5 text-xl sm:text-2xl font-semibold text-[#13294b]">
                 {t("home.highlight1.title")}
               </h3>
               <p className="mt-2 text-sm text-slate-600">
                 {t("home.highlight1.desc")}
               </p>
             </Reveal>
-            <Reveal className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md" delay={120}>
-              <div className="relative h-64 overflow-hidden rounded-2xl">
+            <Reveal className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-slate-200 bg-slate-50 p-4 sm:p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md" delay={120}>
+              <div className="relative h-48 sm:h-64 overflow-hidden rounded-xl sm:rounded-2xl">
                 <Image
                   alt={t("home.highlight2.imageAlt")}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -201,7 +201,7 @@ export default function Home() {
                   width={720}
                 />
               </div>
-              <h3 className="mt-5 text-2xl font-semibold text-[#13294b]">
+              <h3 className="mt-4 sm:mt-5 text-xl sm:text-2xl font-semibold text-[#13294b]">
                 {t("home.highlight2.title")}
               </h3>
               <p className="mt-2 text-sm text-slate-600">
@@ -211,17 +211,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="leistungen" className="border-t border-slate-200 bg-slate-50 py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <section id="leistungen" className="border-t border-slate-200 bg-slate-50 py-12 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-col gap-3 sm:gap-4 md:flex-row md:items-end md:justify-between">
               <Reveal className="" delay={0}>
-                <p className="text-sm uppercase tracking-[0.3em] text-brand-700">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-brand-700">
                   {t("home.services.kicker")}
                 </p>
-                <h2 className="mt-4 text-4xl font-semibold text-[#13294b]">
+                <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#13294b]">
                   {t("home.services.heading")}
                 </h2>
-                <p className="mt-3 max-w-2xl text-slate-600">
+                <p className="mt-2 sm:mt-3 max-w-2xl text-sm sm:text-base text-slate-600">
                   {t("home.services.desc")}
                 </p>
               </Reveal>
@@ -235,11 +235,11 @@ export default function Home() {
               </Reveal>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {services.map((service) => (
                 <Reveal
                   key={service.title}
-                  className="group relative flex h-full flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-400/60 hover:shadow-md"
+                  className="group relative flex h-full flex-col justify-between rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-400/60 hover:shadow-md"
                   delay={120}
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-100 to-sky-50 text-brand-700 motion-safe:animate-float">
@@ -266,30 +266,30 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="prozess" className="border-t border-slate-200 bg-slate-100/60 py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <section id="prozess" className="border-t border-slate-200 bg-slate-100/60 py-12 sm:py-16 md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <div className="flex flex-col gap-3 sm:gap-4 md:flex-row md:items-end md:justify-between">
               <Reveal delay={0}>
-                <p className="text-sm uppercase tracking-[0.3em] text-brand-700">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-brand-700">
                   {t("home.process.kicker")}
                 </p>
-                <h2 className="mt-4 text-4xl font-semibold text-[#13294b]">
+                <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#13294b]">
                   {t("home.process.title")}
                 </h2>
-                <p className="mt-3 max-w-2xl text-slate-600">
+                <p className="mt-2 sm:mt-3 max-w-2xl text-sm sm:text-base text-slate-600">
                   {t("home.process.desc")}
                 </p>
               </Reveal>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 md:grid-cols-3">
               {processSteps.map((step, index) => (
                 <Reveal
                   key={step.title}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+                  className="rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm"
                   delay={index * 80}
                 >
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-500">
+                  <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-slate-500">
                     {t("home.process.step")} {index + 1}
                   </p>
                   <h3 className="mt-4 text-xl font-semibold text-[#13294b]">{step.title}</h3>
@@ -300,16 +300,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="kontakt" className="border-t border-slate-200 bg-slate-50 py-20">
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_0.9fr]">
+        <section id="kontakt" className="border-t border-slate-200 bg-slate-50 py-12 sm:py-16 md:py-20">
+          <div className="mx-auto grid max-w-6xl gap-8 sm:gap-10 px-4 sm:px-6 md:grid-cols-[1fr_0.9fr]">
             <Reveal delay={0}>
-              <p className="text-sm uppercase tracking-[0.3em] text-brand-700">
+              <p className="text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-brand-700">
                 {t("home.contact.kicker")}
               </p>
-              <h2 className="mt-4 text-4xl font-semibold text-[#13294b]">
+              <h2 className="mt-3 sm:mt-4 text-2xl sm:text-3xl md:text-4xl font-semibold text-[#13294b]">
                 {t("home.contact.title")}
               </h2>
-              <p className="mt-4 text-slate-600">
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-slate-600">
                 {t("home.contact.desc")}
               </p>
               <div className="mt-8 space-y-3 text-sm text-slate-600">

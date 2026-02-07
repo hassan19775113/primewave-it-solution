@@ -173,18 +173,18 @@ export default function UberUnsPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-brand-700">
+            <Reveal className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 sm:px-4 py-1.5 sm:py-2 text-[0.65rem] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.35em] text-brand-700">
               {t.heroBadge}
             </Reveal>
-            <Reveal className="mb-6 space-y-6" delay={60}>
-              <h1 className="text-5xl font-bold leading-tight md:text-6xl">
+            <Reveal className="mb-4 sm:mb-6 space-y-4 sm:space-y-6" delay={60}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-[#13294b] to-[#265396] bg-clip-text text-transparent">
                   {t.heroTitle}
                 </span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
+              <p className="max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
                 {t.heroDesc}
               </p>
             </Reveal>
@@ -192,25 +192,25 @@ export default function UberUnsPage() {
         </section>
 
         {/* Mission & Vision */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 md:grid-cols-2">
+            <div className="grid gap-6 sm:gap-8 md:gap-12 md:grid-cols-2">
               <Reveal delay={0}>
-                <h2 className="mb-6 text-4xl font-bold text-[#13294b]">{t.missionTitle}</h2>
-                <p className="mb-4 text-lg leading-relaxed text-slate-600">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-[#13294b]">{t.missionTitle}</h2>
+                <p className="mb-3 sm:mb-4 text-base sm:text-lg leading-relaxed text-slate-600">
                   {t.missionText1}
                 </p>
-                <p className="text-lg leading-relaxed text-slate-600">
+                <p className="text-base sm:text-lg leading-relaxed text-slate-600">
                   {t.missionText2}
                 </p>
               </Reveal>
 
               <Reveal delay={120}>
-                <h2 className="mb-6 text-4xl font-bold text-[#13294b]">{t.visionTitle}</h2>
-                <p className="mb-4 text-lg leading-relaxed text-slate-600">
+                <h2 className="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold text-[#13294b]">{t.visionTitle}</h2>
+                <p className="mb-3 sm:mb-4 text-base sm:text-lg leading-relaxed text-slate-600">
                   {t.visionText1}
                 </p>
-                <p className="text-lg leading-relaxed text-slate-600">
+                <p className="text-base sm:text-lg leading-relaxed text-slate-600">
                   {t.visionText2}
                 </p>
               </Reveal>
@@ -219,25 +219,25 @@ export default function UberUnsPage() {
         </section>
 
         {/* Values */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-8 sm:mb-12 md:mb-16 text-center" delay={0}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#13294b]">
                 {t.valuesTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {t.values.map((value, idx) => (
                 <Reveal
                   key={value.title}
-                  className="rounded-2xl border border-slate-200 bg-slate-50 p-6"
+                  className="rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-6"
                   delay={idx * 60}
                 >
-                  <h3 className="mb-3 text-xl font-semibold text-[#13294b]">
+                  <h3 className="mb-2 sm:mb-3 text-lg sm:text-xl font-semibold text-[#13294b]">
                     {value.title}
                   </h3>
-                  <p className="text-slate-600">{value.description}</p>
+                  <p className="text-sm sm:text-base text-slate-600">{value.description}</p>
                 </Reveal>
               ))}
             </div>
@@ -245,23 +245,23 @@ export default function UberUnsPage() {
         </section>
 
         {/* Team / Expertise */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-8 sm:mb-12 md:mb-16 text-center" delay={0}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#13294b]">
                 {t.expertiseTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2">
               <Reveal delay={0}>
-                <div className="rounded-2xl border border-slate-200 bg-white p-8">
-                  <h3 className="mb-4 text-2xl font-bold text-[#13294b]">{t.techStackTitle}</h3>
-                  <div className="space-y-3">
+                <div className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 md:p-8">
+                  <h3 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-bold text-[#13294b]">{t.techStackTitle}</h3>
+                  <div className="space-y-2 sm:space-y-3">
                     {t.techStack.map((tech) => (
-                      <div key={tech} className="flex items-start gap-3">
+                      <div key={tech} className="flex items-start gap-2 sm:gap-3">
                         <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" />
-                        <span className="text-slate-600">{tech}</span>
+                        <span className="text-sm sm:text-base text-slate-600">{tech}</span>
                       </div>
                     ))}
                   </div>
@@ -269,13 +269,13 @@ export default function UberUnsPage() {
               </Reveal>
 
               <Reveal delay={120}>
-                <div className="rounded-2xl border border-slate-200 bg-white p-8">
-                  <h3 className="mb-4 text-2xl font-bold text-[#13294b]">{t.servicesTitle}</h3>
-                  <div className="space-y-3">
+                <div className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 md:p-8">
+                  <h3 className="mb-3 sm:mb-4 text-xl sm:text-2xl font-bold text-[#13294b]">{t.servicesTitle}</h3>
+                  <div className="space-y-2 sm:space-y-3">
                     {t.services.map((service) => (
-                      <div key={service} className="flex items-start gap-3">
+                      <div key={service} className="flex items-start gap-2 sm:gap-3">
                         <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-brand-500" />
-                        <span className="text-slate-600">{service}</span>
+                        <span className="text-sm sm:text-base text-slate-600">{service}</span>
                       </div>
                     ))}
                   </div>
@@ -286,15 +286,15 @@ export default function UberUnsPage() {
         </section>
 
         {/* Stats */}
-        <section className="border-b border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 md:grid-cols-4">
+            <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-2 lg:grid-cols-4">
               {t.stats.map((stat) => (
                 <Reveal key={stat.label} className="text-center" delay={0}>
-                  <p className="text-5xl font-bold text-white md:text-6xl">
+                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-sm uppercase tracking-[0.2em] text-white/80">
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] text-white/80">
                     {stat.label}
                   </p>
                 </Reveal>
@@ -304,27 +304,27 @@ export default function UberUnsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-t border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <Reveal className="mb-8 space-y-4" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-6 sm:mb-8 space-y-3 sm:space-y-4" delay={0}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#13294b]">
                 {t.ctaTitle}
               </h2>
-              <p className="text-lg text-slate-600">
+              <p className="text-base sm:text-lg text-slate-600">
                 {t.ctaDesc}
               </p>
             </Reveal>
 
-            <Reveal className="flex flex-wrap justify-center gap-4" delay={120}>
+            <Reveal className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4" delay={120}>
               <Link
                 href="/kontakt"
-                className="rounded-full bg-[#13294b] px-8 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#265396]"
+                className="w-full sm:w-auto rounded-full bg-[#13294b] px-6 sm:px-8 py-3 sm:py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#265396]"
               >
                 {t.ctaButton}
               </Link>
               <Link
                 href="/"
-                className="rounded-full border border-brand-200 px-8 py-4 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
+                className="w-full sm:w-auto rounded-full border border-brand-200 px-6 sm:px-8 py-3 sm:py-4 font-semibold text-brand-700 transition hover:-translate-y-0.5 hover:border-brand-300 hover:bg-brand-50"
               >
                 {t.ctaBack}
               </Link>

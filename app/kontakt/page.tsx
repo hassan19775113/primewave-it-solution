@@ -268,18 +268,18 @@ export default function KontaktPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="relative overflow-hidden border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-32">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-6 space-y-4 text-center" delay={0}>
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-4 py-2 text-xs uppercase tracking-[0.35em] text-brand-700">
+            <Reveal className="mb-6 space-y-3 sm:space-y-4 text-center" delay={0}>
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-brand-700">
                 {t.heroBadge}
               </span>
-              <h1 className="text-5xl font-bold leading-tight md:text-6xl">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-[#13294b] to-[#265396] bg-clip-text text-transparent">
                   {t.heroTitle}
                 </span>
               </h1>
-              <p className="mx-auto max-w-2xl text-lg text-slate-600">
+              <p className="mx-auto max-w-2xl text-sm sm:text-base md:text-lg text-slate-600">
                 {t.heroDesc}
               </p>
             </Reveal>
@@ -287,21 +287,21 @@ export default function KontaktPage() {
         </section>
 
         {/* Contact Form & Info Section */}
-        <section className="border-b border-slate-200 bg-slate-50 px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-slate-50 px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-32">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 md:grid-cols-2">
+            <div className="grid gap-8 sm:gap-10 md:gap-12 md:grid-cols-2">
               {/* Contact Form */}
-              <Reveal className="space-y-6" delay={0}>
+              <Reveal className="space-y-4 sm:space-y-6" delay={0}>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#13294b] md:text-4xl">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#13294b]">
                     {t.formTitle}
                   </h2>
-                  <p className="mt-2 text-slate-600">
+                  <p className="mt-2 text-sm sm:text-base text-slate-600">
                     {t.formDesc}
                   </p>
                 </div>
 
-                <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
                   {/* Success/Error Messages */}
                   {status.type && (
                     <div
@@ -433,12 +433,12 @@ export default function KontaktPage() {
               </Reveal>
 
               {/* Contact Info */}
-              <Reveal className="space-y-8" delay={120}>
+              <Reveal className="space-y-6 sm:space-y-8" delay={120}>
                 <div>
-                  <h2 className="text-3xl font-bold text-[#13294b] md:text-4xl">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#13294b]">
                     {t.infoTitle}
                   </h2>
-                  <p className="mt-2 text-slate-600">
+                  <p className="mt-2 text-sm sm:text-base text-slate-600">
                     {t.infoDesc}
                   </p>
                 </div>
@@ -481,19 +481,19 @@ export default function KontaktPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="border-b border-slate-200 bg-white px-6 py-20 md:py-32">
+        <section className="border-b border-slate-200 bg-white px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-32">
           <div className="mx-auto max-w-6xl">
-            <Reveal className="mb-16 text-center" delay={0}>
-              <h2 className="text-4xl font-bold text-[#13294b] md:text-5xl">
+            <Reveal className="mb-10 sm:mb-12 md:mb-16 text-center" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#13294b]">
                 {t.faqTitle}
               </h2>
             </Reveal>
 
-            <div className="grid gap-6 md:max-w-3xl md:mx-auto">
+            <div className="grid gap-4 sm:gap-6 md:max-w-3xl md:mx-auto">
               {t.faqs.map((faq, idx) => (
                 <Reveal
                   key={faq.q}
-                  className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6"
+                  className="overflow-hidden rounded-xl sm:rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-6"
                   delay={idx * 60}
                 >
                   <h3 className="font-semibold text-[#13294b]">{faq.q}</h3>
@@ -505,24 +505,24 @@ export default function KontaktPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-6 py-20 md:py-32">
+        <section className="border-t border-slate-200 bg-gradient-to-r from-[#13294b] to-[#265396] px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-32">
           <div className="mx-auto max-w-3xl text-center">
-            <Reveal className="mb-8 space-y-4" delay={0}>
-              <h2 className="text-4xl font-bold text-white md:text-5xl">
+            <Reveal className="mb-6 sm:mb-8 space-y-3 sm:space-y-4" delay={0}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
                 {t.ctaTitle}
               </h2>
-              <p className="text-lg text-white/90">
+              <p className="text-base sm:text-lg text-white/90">
                 {t.ctaDesc}
               </p>
             </Reveal>
 
-            <Reveal className="flex flex-wrap justify-center gap-4" delay={120}>
-              <button className="rounded-full bg-white px-8 py-4 font-semibold text-[#13294b] transition hover:-translate-y-0.5">
+            <Reveal className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4" delay={120}>
+              <button className="w-full sm:w-auto rounded-full bg-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-[#13294b] transition hover:-translate-y-0.5">
                 {t.ctaButton}
               </button>
               <Link
                 href="/"
-                className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white/20"
+                className="w-full sm:w-auto text-center rounded-full border border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition hover:bg-white/20"
               >
                 {t.ctaBack}
               </Link>
