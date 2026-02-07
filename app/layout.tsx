@@ -9,20 +9,27 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://primewave-it-solution.vercel.app"),
   title: {
-    default: "Primewave IT Solution | Webdesign, Webentwicklung & Web Applications",
+    default: "Webdesign & Webentwicklung Agentur | Primewave IT Solution",
     template: "%s | Primewave IT Solution"
   },
   description:
-    "Primewave IT Solution gestaltet moderne Websites und maßgeschneiderte Web-Applications für Unternehmen. Webdesign, SEO, E-Commerce & Python Apps.",
+    "Webdesign Agentur mit Spezialisierung auf Next.js, E-Commerce & Web-Applications. Professionelle Websites, responsive Design & SEO-optimiert für Ihr Unternehmen.",
   keywords: [
-    "Webdesign",
+    "Webdesign Agentur",
     "Webentwicklung",
     "Web Applications",
     "Next.js Entwicklung",
-    "E-Commerce",
-    "SEO",
-    "Webagentur",
-    "IT Agentur"
+    "E-Commerce Lösungen",
+    "SEO Optimierung",
+    "UI/UX Design",
+    "Responsive Websites",
+    "Python Django",
+    "Web Developer Freelance",
+    "Website Agentur",
+    "Webagentur Deutschland",
+    "Webdesign Köln",
+    "Webentwicklung Freelancer",
+    "Online Shop Entwicklung"
   ],
   authors: [{ name: "Primewave IT Solution" }],
   creator: "Primewave IT Solution",
