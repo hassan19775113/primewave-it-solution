@@ -26,8 +26,9 @@ export function StructuredData() {
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Customer Support',
-        email: 'kontakt@primewave-it-solution.com',
-        telephone: '+49-XXX-XXXXXX'
+        email: 'hassan19775113@outlook.com',
+        telephone: '+49 178 4946526',
+        areaServed: 'Region Hannover'
       }
     };
 
@@ -41,12 +42,28 @@ export function StructuredData() {
       description:
         'Webdesign, Webentwicklung und Web-Applications für Unternehmen',
       url: 'https://primewave-it-solution.vercel.app',
-      telephone: '+49-XXX-XXXXXX',
-      email: 'kontakt@primewave-it-solution.com',
-      areaServed: {
-        '@type': 'Country',
-        name: 'DE'
+      telephone: '+49 178 4946526',
+      email: 'hassan19775113@outlook.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Garbsen',
+        addressRegion: 'Region Hannover',
+        addressCountry: 'DE'
       },
+      areaServed: [
+        {
+          '@type': 'City',
+          name: 'Garbsen'
+        },
+        {
+          '@type': 'City',
+          name: 'Hannover'
+        },
+        {
+          '@type': 'Country',
+          name: 'DE'
+        }
+      ],
       priceRange: '$$'
     };
 
@@ -58,8 +75,8 @@ export function StructuredData() {
       image: 'https://primewave-it-solution.vercel.app/logo.png',
       description: 'Webdesign- und Webentwicklungsagentur',
       url: 'https://primewave-it-solution.vercel.app',
-      telephone: '+49-XXX-XXXXXX',
-      email: 'kontakt@primewave-it-solution.com',
+      telephone: '+49 178 4946526',
+      email: 'hassan19775113@outlook.com',
       additionalType: 'http://www.productontology.org/doc/Web_design',
       knowsAbout: [
         'Webdesign',
@@ -67,7 +84,8 @@ export function StructuredData() {
         'Web-Applications',
         'E-Commerce',
         'SEO'
-      ]
+      ],
+      areaServed: 'Region Hannover'
     };
 
     // Inject Schemas

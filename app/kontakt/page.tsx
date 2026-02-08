@@ -123,17 +123,17 @@ export default function KontaktPage() {
       contactItems: [
         {
           title: "E-Mail",
-          value: "hello@primewave.de",
+          value: "hassan19775113@outlook.com",
           icon: "✉"
         },
         {
           title: "Telefon",
-          value: "+49 (123) 456789",
+          value: "+49 178 4946526",
           icon: "☎"
         },
         {
           title: "Adresse",
-          value: "Technologiepark 1\n12345 Berlin, Deutschland",
+          value: "Region Hannover · Garbsen\nRemote Termine nach Vereinbarung",
           icon: "📍"
         },
         {
@@ -208,17 +208,17 @@ export default function KontaktPage() {
       contactItems: [
         {
           title: "Email",
-          value: "hello@primewave.de",
+          value: "hassan19775113@outlook.com",
           icon: "✉"
         },
         {
           title: "Phone",
-          value: "+49 (123) 456789",
+          value: "+49 178 4946526",
           icon: "☎"
         },
         {
           title: "Address",
-          value: "Technologiepark 1\n12345 Berlin, Germany",
+          value: "Hanover Region · Garbsen\nRemote appointments by arrangement",
           icon: "📍"
         },
         {
