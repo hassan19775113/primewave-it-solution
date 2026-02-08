@@ -128,12 +128,12 @@ export default function KontaktPage() {
         },
         {
           title: "Telefon",
-          value: "+49 178 4946526",
+          value: "+49 173 4946526",
           icon: "☎"
         },
         {
           title: "Adresse",
-          value: "Region Hannover · Garbsen\nRemote Termine nach Vereinbarung",
+          value: "Hannover · Region Garbsen\nRemote Termine nach Vereinbarung",
           icon: "📍"
         },
         {
@@ -213,12 +213,12 @@ export default function KontaktPage() {
         },
         {
           title: "Phone",
-          value: "+49 178 4946526",
+          value: "+49 173 4946526",
           icon: "☎"
         },
         {
           title: "Address",
-          value: "Hanover Region · Garbsen\nRemote appointments by arrangement",
+          value: "Hannover · Garbsen region\nRemote appointments by arrangement",
           icon: "📍"
         },
         {

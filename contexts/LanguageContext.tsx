@@ -104,9 +104,9 @@ const translations = {
     "home.contact.kicker": "Kontakt",
     "home.contact.title": "Bereit für den nächsten digitalen Schritt?",
     "home.contact.desc": "Erzähl uns von deinem Projekt – wir melden uns innerhalb von 24 Stunden mit einem klaren Fahrplan und ehrlichem Feedback.",
-    "home.contact.location": "Region Hannover · Garbsen · Remote",
+    "home.contact.location": "Hannover · Garbsen · Remote",
     "home.contact.email": "hassan19775113@outlook.com",
-    "home.contact.phone": "+49 178 4946526",
+    "home.contact.phone": "+49 173 4946526",
 
     // Contact Form
     "home.form.title": "Projektanfrage",
@@ -249,9 +249,9 @@ const translations = {
     "home.contact.kicker": "Contact",
     "home.contact.title": "Ready for the next digital step?",
     "home.contact.desc": "Tell us about your project — we’ll get back within 24 hours with a clear roadmap and honest feedback.",
-    "home.contact.location": "Hanover region · Garbsen · Remote",
+    "home.contact.location": "Hanover · Garbsen · Remote",
     "home.contact.email": "hassan19775113@outlook.com",
-    "home.contact.phone": "+49 178 4946526",
+    "home.contact.phone": "+49 173 4946526",
 
     // Contact Form
     "home.form.title": "Project inquiry",
