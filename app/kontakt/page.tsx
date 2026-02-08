@@ -274,7 +274,7 @@ export default function KontaktPage() {
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-brand-700">
                 <span
                   aria-hidden="true"
-                  className="flex h-5 w-5 items-center justify-center rounded-full bg-white/80 text-sm text-[#13294b]"
+                  className="flex h-6 w-6 items-center justify-center rounded-full border border-brand-300 bg-white text-base text-brand-700 shadow-sm"
                   title="Kontakt"
                 >
                   📞
