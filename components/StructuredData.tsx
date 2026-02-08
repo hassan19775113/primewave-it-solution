@@ -77,6 +77,12 @@ export function StructuredData() {
       url: 'https://primewave-it-solution.vercel.app',
       telephone: '+49 173 4946526',
       email: 'hassan19775113@outlook.com',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hannover',
+        addressRegion: 'Garbsen',
+        addressCountry: 'DE'
+      },
       additionalType: 'http://www.productontology.org/doc/Web_design',
       knowsAbout: [
         'Webdesign',
