@@ -138,7 +138,7 @@ export default function KontaktPage() {
         },
         {
           title: "Öffnungszeiten",
-          value: "Mo–Fr 09:00 – 18:00 Uhr\nSa–So geschlossen",
+          value: "Mo–Fr ab 18:00 Uhr\nSa–So geöffnet",
           icon: "🕐"
         }
       ],
@@ -223,7 +223,7 @@ export default function KontaktPage() {
         },
         {
           title: "Business Hours",
-          value: "Mon–Fri 09:00 – 18:00\nSat–Sun Closed",
+          value: "Mon–Fri from 6pm\nSat–Sun Open",
           icon: "🕐"
         }
       ],
