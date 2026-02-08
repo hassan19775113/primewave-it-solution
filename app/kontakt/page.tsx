@@ -272,6 +272,7 @@ export default function KontaktPage() {
           <div className="mx-auto max-w-6xl">
             <Reveal className="mb-6 space-y-3 sm:space-y-4 text-center" delay={0}>
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-brand-700">
+                <span aria-hidden="true">💬</span>
                 {t.heroBadge}
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
