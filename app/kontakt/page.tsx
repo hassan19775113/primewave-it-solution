@@ -274,7 +274,7 @@ export default function KontaktPage() {
               <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-brand-50 px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-brand-700">
                 <span
                   aria-hidden="true"
-                  className="flex h-6 w-6 items-center justify-center rounded-full border border-brand-300 bg-white text-base text-brand-700 shadow-sm"
+                  className="flex h-5 w-5 items-center justify-center rounded-full bg-white/80 text-sm text-[#13294b]"
                   title="Kontakt"
                 >
                   📞
@@ -451,13 +451,21 @@ export default function KontaktPage() {
                 </div>
 
                 {t.contactItems.map((item) => (
-                  <div key={item.title}>
-                    <p className="text-sm uppercase tracking-[0.2em] text-brand-700">
-                      {item.title}
-                    </p>
-                    <p className="mt-2 whitespace-pre-line text-slate-700">
-                      {item.value}
-                    </p>
+                  <div key={item.title} className="flex gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-slate-200 bg-white/60 px-3 sm:px-4 py-3 sm:py-4 shadow-sm">
+                    <span
+                      aria-hidden="true"
+                      className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-full border border-brand-200 bg-brand-50 text-lg sm:text-xl text-[#13294b]"
+                    >
+                      {item.icon}
+                    </span>
+                    <div>
+                      <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-brand-700">
+                        {item.title}
+                      </p>
+                      <p className="mt-2 whitespace-pre-line text-slate-700">
+                        {item.value}
+                      </p>
+                    </div>
                   </div>
                 ))}
 
