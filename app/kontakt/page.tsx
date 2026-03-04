@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Reveal from "../../components/Reveal";
 import SiteFooter from "../../components/SiteFooter";
@@ -9,6 +9,26 @@ import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function KontaktPage() {
   const { language } = useLanguage();
+
+  // Load reCAPTCHA script when site key is present
+  useEffect(() => {
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    if (!siteKey) return;
+
+    const existing = document.querySelector(`script[data-recaptcha="primewave"]`);
+    if (existing) return;
+
+    const script = document.createElement('script');
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.async = true;
+    script.defer = true;
+    script.setAttribute('data-recaptcha', 'primewave');
+    document.body.appendChild(script);
+
+    return () => {
+      // keep script for subsequent navigations; don't remove
+    };
+  }, []);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -41,12 +61,27 @@ export default function KontaktPage() {
     setStatus({ type: null, message: "" });
 
     try {
+      // If reCAPTCHA site key is configured, attempt to get a token and include it
+      let recaptchaToken: string | undefined;
+      const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+      if (siteKey && (window as any).grecaptcha) {
+        try {
+          await (window as any).grecaptcha.ready();
+          recaptchaToken = await (window as any).grecaptcha.execute(siteKey, { action: 'contact' });
+        } catch (err) {
+          // If reCAPTCHA fails, continue without token (server may enforce)
+          console.warn('reCAPTCHA execution failed', err);
+        }
+      }
+
+      const payload = { ...formData, recaptchaToken };
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       const data = await response.json();
