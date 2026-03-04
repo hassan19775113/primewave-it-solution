@@ -401,7 +401,9 @@ export default function SeoPage() {
     }
   };
 
-  const t = content[language];
+  // Fallback to 'en' for languages not yet translated
+  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
+  const t = content[contentLanguage as keyof typeof content];
 
   return (
     <div className="relative min-h-screen bg-slate-50 text-slate-900">

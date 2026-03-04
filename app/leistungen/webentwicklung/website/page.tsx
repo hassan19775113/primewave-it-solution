@@ -404,7 +404,9 @@ export default function WebsitePage() {
     }
   } as const;
 
-  const t = content[language];
+  // Fallback to 'en' for languages not yet translated
+  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
+  const t = content[contentLanguage as keyof typeof content];
 
   const benefits = t.benefits;
   const features = t.features;

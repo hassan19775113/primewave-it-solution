@@ -204,7 +204,9 @@ export default function TechnologienPage() {
     }
   } as const;
 
-  const t = content[language];
+  // Fallback to 'en' for languages not yet translated
+  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
+  const t = content[contentLanguage as keyof typeof content];
 
   const technologies = t.categories.map((category) => ({
     category: category.category,

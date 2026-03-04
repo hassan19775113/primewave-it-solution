@@ -2,12 +2,13 @@
 
 import { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "de" | "en";
+type Language = "de" | "en" | "ar" | "ku";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  isRTL: () => boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -302,6 +303,64 @@ const translations = {
     "footer.imprint": "Imprint",
     "footer.privacy": "Privacy",
     "footer.rights": "All rights reserved.",
+  },
+  ar: {
+    // Navigation
+    "nav.home": "الصفحة الرئيسية",
+    "nav.webdev": "تطوير الويب",
+    "nav.webdesign": "تصميم الويب",
+    "nav.onlineshop": "متجر إلكتروني",
+    "nav.webapp": "تطبيق ويب مع Python",
+    "nav.uiux": "تصميم UI/UX",
+    "nav.seo": "SEO",
+    "nav.technologies": "التقنيات",
+    "nav.about": "من نحن",
+    "nav.contact": "اتصل بنا",
+    
+    // Homepage Hero
+    "home.hero.badge": "وكالة رقمية من ألمانيا",
+    "home.hero.title": "رؤيتك. خبرتنا. نجاح رقمي معاً.",
+    "home.hero.description": "نطور مواقع ويب حديثة، وحلول تجارة إلكترونية قوية، وتطبيقات ويب مخصصة - باستخدام أحدث التقنيات والتصميم الواضح والنتائج القابلة للقياس.",
+    "home.hero.cta1": "استشارة مجانية",
+    "home.hero.cta2": "اكتشف الخدمات",
+    "home.hero.imageAlt": "خلفية مشروع تكنولوجيا المعلومات",
+    
+    "home.services.title": "خدماتنا",
+    "home.services.subtitle": "حلول رقمية مخصصة لعملك",
+    "home.service1.title": "تصميم الويب والصفحات المقصودة",
+    "home.service1.cta": "اعرف المزيد",
+    "home.cta.title": "هل أنت مستعد لمشروعك الرقمي؟",
+    "home.cta.button": "ابدأ مشروعك الآن",
+    "footer.rights": "جميع الحقوق محفوظة.",
+  },
+  ku: {
+    // Navigation
+    "nav.home": "سەرەتا",
+    "nav.webdev": "گەشەپێدانی وێب",
+    "nav.webdesign": "دیزاینی وێب",
+    "nav.onlineshop": "فرۆشگای ئۆنلاین",
+    "nav.webapp": "بەرنامەی وێب لەگەڵ Python",
+    "nav.uiux": "دیزاینی UI/UX",
+    "nav.seo": "SEO",
+    "nav.technologies": "تەکنەلۆژیاکان",
+    "nav.about": "دەربارەمان",
+    "nav.contact": "پەیوەندی",
+    
+    // Homepage Hero
+    "home.hero.badge": "ئەنجومەنی دیجیتاڵ لە ئەڵمانیا",
+    "home.hero.title": "دیدگاکەت. شارەزاییمان. سەرکەوتنی دیجیتاڵی پێکەوە.",
+    "home.hero.description": "ئێمە ماڵپەڕی نوێ، چارەسەری بەهێزی بازرگانی ئەلیکترۆنی، و بەرنامەی وێبی تایبەت گەشە پێدەدەین - بە بەکارهێنانی نوێترین تەکنەلۆژیاکان و دیزاینی ڕوون و ئەنجامی پێوان.",
+    "home.hero.cta1": "ڕاوێژکاریی بەخۆڕایی",
+    "home.hero.cta2": "خزمەتگوزارییەکان بزانە",
+    "home.hero.imageAlt": "پاشبنەمای پڕۆژەی IT",
+    
+    "home.services.title": "خزمەتگوزارییەکانمان",
+    "home.services.subtitle": "چارەسەری دیجیتاڵی تایبەت بۆ بازرگانیەکەت",
+    "home.service1.title": "دیزاینی وێب و لاپەڕەکانی فڕینە",
+    "home.service1.cta": "زیاتر بزانە",
+    "home.cta.title": "ئامادەیت بۆ پڕۆژەی دیجیتاڵەکەت؟",
+    "home.cta.button": "ئێستا پڕۆژەکەت دەست پێبکە",
+    "footer.rights": "هەموو مافەکان پارێزراون.",
   }
 };
 
@@ -309,11 +368,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("de");
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.de] || key;
+    const langTranslations = translations[language] as Record<string, string>;
+    return langTranslations[key] || translations["en"][key as keyof typeof translations.en] || key;
+  };
+
+  const isRTL = (): boolean => {
+    return language === "ar" || language === "ku";
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isRTL }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -24,6 +24,9 @@ export default function SiteHeader() {
   // State: Mobile Menu visibility
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
+  // State: Language dropdown visibility
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  
   // Timeout Ref für verzögertes Schließen des Desktop-Dropdowns
   // Verhindert zu schnelles Schließen beim Maus-Bewegen zwischen Button und Dropdown
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -160,32 +163,50 @@ export default function SiteHeader() {
           })}
           
           {/* Language Switcher - Desktop */}
-          <div className="flex items-center gap-2 border-l border-slate-200 pl-6">
+          <div className="relative flex items-center gap-2 border-l border-slate-200 pl-6">
             <button
-              onClick={() => setLanguage(language === "de" ? "en" : "de")}
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               className="flex items-center gap-2 text-sm font-semibold transition hover:text-slate-900"
               aria-label="Sprache wechseln"
             >
               <MdLanguage className="text-lg" aria-hidden />
-              <span>{language === "de" ? "DE" : "EN"}</span>
+              <span>{language.toUpperCase()}</span>
               <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
+            {langDropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 w-32 rounded-lg border border-slate-200 bg-white py-2 shadow-lg z-50">
+                <button onClick={() => { setLanguage("de"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇩🇪 Deutsch</button>
+                <button onClick={() => { setLanguage("en"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇬🇧 English</button>
+                <button onClick={() => { setLanguage("ar"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇸🇦 العربية</button>
+                <button onClick={() => { setLanguage("ku"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🟨🟥🟩 کوردی</button>
+              </div>
+            )}
           </div>
         </nav>
 
         {/* Mobile & Tablet Actions */}
         <div className="flex items-center gap-3">
           {/* Language Switcher - Mobile */}
-          <button
-            onClick={() => setLanguage(language === "de" ? "en" : "de")}
-            className="flex lg:hidden items-center gap-1 text-sm font-semibold transition hover:text-slate-900"
-            aria-label="Sprache wechseln"
-          >
-            <MdLanguage className="text-xl" aria-hidden />
-            <span className="text-xs">{language === "de" ? "DE" : "EN"}</span>
-          </button>
+          <div className="relative lg:hidden">
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              className="flex items-center gap-1 text-sm font-semibold transition hover:text-slate-900"
+              aria-label="Sprache wechseln"
+            >
+              <MdLanguage className="text-xl" aria-hidden />
+              <span className="text-xs">{language.toUpperCase()}</span>
+            </button>
+            {langDropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 w-32 rounded-lg border border-slate-200 bg-white py-2 shadow-lg z-50">
+                <button onClick={() => { setLanguage("de"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇩🇪 DE</button>
+                <button onClick={() => { setLanguage("en"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇬🇧 EN</button>
+                <button onClick={() => { setLanguage("ar"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🇸🇦 AR</button>
+                <button onClick={() => { setLanguage("ku"); setLangDropdownOpen(false); }} className="w-full px-4 py-2 text-left text-sm hover:bg-slate-50 transition">🟨 KU</button>
+              </div>
+            )}
+          </div>
 
           {/* CTA Button - Hidden on small mobile */}
           <Link
