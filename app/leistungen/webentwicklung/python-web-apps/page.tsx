@@ -240,12 +240,100 @@ export default function PythonWebAppsPage() {
       ctaDesc: "Let's build a scalable web application together that meets the demands of your business.",
       ctaButton: "Free Consultation",
       ctaBack: "Back to Home"
+    },
+    ar: {
+      heroBadge: "تطبيقات ويب Python",
+      heroTitle: "خلفية Python لتجارب ويب حديثة",
+      heroDesc: "أنظمة خلفية قوية وقابلة للتوسع مع Python. من الشركات الناشئة إلى المؤسسات — نبني تطبيقات ويب تنمو مع نمو عملك.",
+      ctaPrimary: "ابدأ مشروع Python",
+      ctaSecondary: "مشاهدة مجموعة الأدوات",
+      benefits: [
+        { title: "التطوير السريع", description: "نماذج أولية ومنتجات MVP سريعة مع أطر عمل Python مثل Django و FastAPI" },
+        { title: "تطبيقات موجهة بالبيانات", description: "مثالي للتطبيقات المكثفة بالبيانات، تعلم الآلة، وذكاء الأعمال" },
+        { title: "قابلية التوسع", description: "خلفيات عالية الأداء مع FastAPI، MongoDB، والبنية التحتية السحابية" },
+        { title: "بنية API-First", description: "RESTful و GraphQL APIs لتقنيات الواجهة الحديثة مثل React، Next.js" },
+        { title: "المجتمع والمكتبات", description: "نظام بيئي ضخم مع مكتبات مثبتة لكل حالة استخدام تقريبًا" },
+        { title: "التكامل والأتمتة", description: "تكاملات سلسة مع خدمات الطرف الثالث، CRM، ERP، ومصادر البيانات" }
+      ],
+      benefitsTitle: "لماذا Python لتطبيقات الويب؟",
+      techStackTitle: "مجموعة أدواتنا التقنية",
+      techStackDesc: "تقنيات جاهزة للمؤسسات للتطوير المحترف للويب",
+      techStack: ["Django", "FastAPI", "Flask", "PostgreSQL", "MongoDB", "Redis", "Celery", "Docker", "Kubernetes", "AWS/GCP", "GraphQL", "REST APIs"],
+      useCasesTitle: "ما نبنيه مع Python",
+      useCases: [
+        { title: "لوحة تحليل البيانات", description: "لوحات تفاعلية لتصور بيانات الأعمال في الوقت الفعلي", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop" },
+        { title: "تقبيق SaaS", description: "منصات SaaS قابلة للتوسع متعددة المستأجرين مع خلفية Python وواجهة حديثة", image: "https://images.unsplash.com/photo-1460925895917-adf4e565db18?q=80&w=1400&auto=format&fit=crop" },
+        { title: "تكامل تعلم الآلة", description: "دمج التحليلات التنبؤية وميزات AI في تطبيقات الويب", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop" },
+        { title: "أداة التعاون في الوقت الفعلي", description: "تحديثات البيانات الحية والاتصال في الوقت الفعلي مع WebSockets", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop" }
+      ],
+      processTitle: "عملية تطوير Python الخاصة بنا",
+      processSteps: [
+        { title: "1. المتطلبات والبنية", description: "نقوم بتحليل متطلباتك وتصميم بنية قابلة للتوسع مع Python، قواعد البيانات، والـ APIs." },
+        { title: "2. تطوير خلفية رشيق", description: "تطوير تكراري مع Django/FastAPI، اختبارات الوحدة، والتكامل المستمر. سبرينتات مع نشر منتظم." },
+        { title: "3. تكامل الواجهة", description: "ـ RESTful أو GraphQL APIs لواجهتك React/Next.js. تعاون سلس بين الخلفية والواجهة." },
+        { title: "4. الاختبار والنشر", description: "تغطية اختبار كاملة، تحسين الأداء، ونشر آمن على AWS، GCP، أو بنيتك التحتية." }
+      ],
+      stats: [{ label: "مشاريع Python", value: "45+" }, { label: "متوسط وقت استجابة API", value: "<100مللي" }, { label: "وقت التشغيل", value: "99.8%" }],
+      seoTitle: "Python لـ SEO من الدرجة الأولى",
+      seoItems: [
+        { title: "SSR و SSG", desc: "العرض من جانب الخادم لـ SEO وأداء أفضل" },
+        { title: "بيانات منظمة", desc: "JSON-LD و Schema.org للمقتطفات الغنية" },
+        { title: "الأداء", desc: "استراتيجيات التخزين المؤقت وتكامل CDN لأوقات تحميل سريعة" },
+        { title: "المراقبة", desc: "التحليلات وتتبع الأداء في الإنتاج" }
+      ],
+      ctaTitle: "هل أنت مستعد لمشروع Python الخاص بك؟",
+      ctaDesc: "دعنا نبني معاً تطبيق ويب قابل للتوسع يلبي متطلبات عملك.",
+      ctaButton: "استشارة مجانية",
+      ctaBack: "العودة إلى الصفحة الرئيسية"
+    },
+    ku: {
+      heroBadge: "بەرنامەی وێبی Python",
+      heroTitle: "خلفیی Python بۆ ئەزموونی وێبی مۆدێرن",
+      heroDesc: "سیستەمی خلفیی بەهێز و گەورەکراو لەگەڵ Python. لە Startup تا دامەزراوە — بەرنامەی وێب دروست دەکەین کە لەگەڵ گەشەی بزنەست گەشە دەکەن.",
+      ctaPrimary: "دەستپێکردنی پرۆژەی Python",
+      ctaSecondary: "بینینی کۆمەڵەی ئامراز",
+      benefits: [
+        { title: "گەشەپێدانی خێرا", description: "نموونەی یەکەم و MVP ی خێرا لەگەڵ شێوازی Python وەک Django و FastAPI" },
+        { title: "بەرنامەکانی داتا-بنەما", description: "تەواو بۆ بەرنامەی داتا-چروک، فێربوونی ئامێر، و زیرەکیی بزنەس" },
+        { title: "گەورەبوون", description: "خلفیی بەرز-ئاداکار لەگەڵ FastAPI، MongoDB، و تەلارسازیی هەوری" },
+        { title: "تەلارسازیی API-First", description: "ـ RESTful و GraphQL APIs بۆ تەکنەلۆژیای نوێی وێبی وەک React، Next.js" },
+        { title: "کۆمەڵگا و کتێبخانەکان", description: "سیستەمی ژینگەیی گەورە لەگەڵ کتێبخانەی سەلماندراو بۆ هەموو حاڵەتێکی بەکارهێنان" },
+        { title: "یەکگرتن و خۆکاری", description: "یەکگرتنی نەرم لەگەڵ خزمەتگوزاریی لایەنی سێیەم، CRM، ERP، و سەرچاوەی داتا" }
+      ],
+      benefitsTitle: "بۆچی Python بۆ بەرنامەی وێب؟",
+      techStackTitle: "کۆمەڵەی ئامرازمان",
+      techStackDesc: "تەکنەلۆژیای ئامادە بۆ دامەزراوە بۆ گەشەپێدانی وێبی پسپۆڕانە",
+      techStack: ["Django", "FastAPI", "Flask", "PostgreSQL", "MongoDB", "Redis", "Celery", "Docker", "Kubernetes", "AWS/GCP", "GraphQL", "REST APIs"],
+      useCasesTitle: "چی لەگەڵ Python دروست دەکەین",
+      useCases: [
+        { title: "داشبۆردی شیکاری داتا", description: "داشبۆردی کارلێکەر بۆ وێناکردنی داتای بزنەس لە کاتی ڕاستەقینە", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1400&auto=format&fit=crop" },
+        { title: "بەرنامەی SaaS", description: "پلاتفۆرمی SaaS ی گەورەکراو چەند-بەکرێ لەگەڵ خلفیی Python و UI ی مۆدێرن", image: "https://images.unsplash.com/photo-1460925895917-adf4e565db18?q=80&w=1400&auto=format&fit=crop" },
+        { title: "یەکگرتنی فێربوونی ئامێر", description: "یەکخستنی شیکاریی پێشبینیچی و تایبەتمەندیی AI لە بەرنامەی وێب", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop" },
+        { title: "ئامرازی هاوکاری کاتی-ڕاستەقینە", description: "نوێکردنەوەی داتای زیندوو و پەیوەندی کاتی-ڕاستەقینە لەگەڵ WebSockets", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop" }
+      ],
+      processTitle: "پرۆسەی گەشەپێدانی Python مان",
+      processSteps: [
+        { title: "1. پێداویستییەکان و تەلارسازی", description: "ئێمە پێداویستییەکانت شی دەکەینەوە و تەلارسازییەکی گەورەکراو دیزاین دەکەین لەگەڵ Python، داتابەیس، و API." },
+        { title: "2. گەشەپێدانی خلفیی Agile", description: "گەشەپێدانی دووبارەکردنەوە لەگەڵ Django/FastAPI، تاقیکردنەوەی یەکە، و یەکگرتنی بەردەوام. سپرینت لەگەڵ بڵاوکردنەوەی بەردەوام." },
+        { title: "3. یەکگرتنی ڕووی", description: "ـ RESTful یان GraphQL APIs بۆ ڕووی React/Next.js ت. هاوکاریی نەرم لە نێوان خلفی و ڕوو." },
+        { title: "4. تاقیکردنەوە و بڵاوکردنەوە", description: "داپۆشینی تاقیکردنەوەی تەواو، باشکردنی کارایی، و بڵاوکردنەوەی پارێزراو لەسەر AWS، GCP، یان تەلارسازی تۆ." }
+      ],
+      stats: [{ label: "پرۆژەی Python", value: "45+" }, { label: "ناوەندی کاتی وەڵامی API", value: "<100ms" }, { label: "کاتی کارکردن", value: "99.8%" }],
+      seoTitle: "Python بۆ SEO ی پلەی یەکەم",
+      seoItems: [
+        { title: "SSR و SSG", desc: "نیشاندانی لای سێرڤەر بۆ SEO و کارایی باشتر" },
+        { title: "داتای ڕێکخراو", desc: "JSON-LD و Schema.org بۆ Snippet ی دەولەمەند" },
+        { title: "کارایی", desc: "ستراتیژیی کەشکردن و یەکگرتنی CDN بۆ کاتی بارکردنی خێرا" },
+        { title: "چاودێری", desc: "شیکاری و چاودێریی کارایی لە بەرهەمهێنان" }
+      ],
+      ctaTitle: "ئامادەیت بۆ پرۆژەی Python ت؟",
+      ctaDesc: "با پێکەوە بەرنامەیەکی وێبی گەورەکراو دروست بکەین کە پێداویستییەکانی بزنەست بچووکێت.",
+      ctaButton: "ڕاوێژکاری بێبەرامبەر",
+      ctaBack: "گەڕانەوە بۆ سەرەتا"
     }
   };
 
-  // Fallback to 'en' for languages not yet translated
-  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
-  const t = content[contentLanguage as keyof typeof content];
+  const t = content[language as keyof typeof content];
 
   return (
     <div className="relative min-h-screen bg-slate-50 text-slate-900">
