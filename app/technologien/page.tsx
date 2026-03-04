@@ -201,12 +201,202 @@ export default function TechnologienPage() {
           ]
         }
       ]
+    },
+    ar: {
+      heroBadge: "التقنيات والأدوات",
+      heroTitle: "تقنيات حديثة لمشروعك الرقمي",
+      heroDesc:
+        "نعمل مع أفضل الأدوات والأطر في الصناعة. من React و Next.js إلى Python و Shopify - مجموعة التقنيات لدينا محسّنة للأداء وقابلية التوسع وتجربة المطور.",
+      servicesTitle: "خدماتنا",
+      servicesSubtitle: "حلول مخصصة بتقنيات حديثة",
+      ctaTitle: "هل أنت مستعد لتقنية حديثة؟",
+      ctaDesc:
+        "دعنا نبني مشروعك معاً بأفضل الأدوات والأطر.",
+      ctaPrimary: "ناقش المشروع",
+      ctaSecondary: "العودة إلى الصفحة الرئيسية",
+      services: [
+        {
+          title: "تصميم الويب والصفحات المقصودة",
+          description: "مواقع ويب حديثة وسريعة مع Next.js و React",
+          link: "/leistungen/webentwicklung/website",
+          techs: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+        },
+        {
+          title: "التجارة الإلكترونية والمتاجر عبر الإنترنت",
+          description: "متاجر قائمة على Shopify مع واجهة أمامية منفصلة",
+          link: "/leistungen/webentwicklung/onlineshop",
+          techs: ["Shopify", "Next.js", "Stripe", "PostgreSQL"]
+        },
+        {
+          title: "تطبيقات الويب",
+          description: "أنظمة خلفية مع Python",
+          link: "/leistungen/webentwicklung/python-web-apps",
+          techs: ["Python", "Django", "FastAPI", "PostgreSQL", "MongoDB"]
+        },
+        {
+          title: "تصميم UI/UX",
+          description: "بحث المستخدم، النماذج الأولية، أنظمة التصميم",
+          link: "/leistungen/webentwicklung/ui-ux-design",
+          techs: ["Figma", "Adobe XD", "Design Systems"]
+        },
+        {
+          title: "SEO والأداء",
+          description: "SEO التقني، استراتيجية المحتوى، التحليلات",
+          link: "/leistungen/seo",
+          techs: ["Google Analytics", "Semrush", "Search Console"]
+        }
+      ],
+      categories: [
+        {
+          category: "أطر الواجهة الأمامية",
+          items: [
+            { name: "Next.js", description: "إطار React للإنتاج", key: "nextjs" },
+            { name: "React", description: "مكتبة UI لتطبيقات الويب الحديثة", key: "react" },
+            { name: "TypeScript", description: "JavaScript آمن النوع", key: "typescript" },
+            { name: "Tailwind CSS", description: "إطار CSS قائم على الأدوات المساعدة", key: "tailwind" }
+          ]
+        },
+        {
+          category: "الباك إند وقواعد البيانات",
+          items: [
+            { name: "Python", description: "Django, FastAPI, Flask", key: "python" },
+            { name: "Node.js", description: "بيئة تشغيل JavaScript", key: "node" },
+            { name: "PostgreSQL", description: "قاعدة بيانات علائقية", key: "postgres" },
+            { name: "MongoDB", description: "قاعدة بيانات NoSQL", key: "mongo" }
+          ]
+        },
+        {
+          category: "التجارة الإلكترونية",
+          items: [
+            { name: "Shopify", description: "منصة التجارة الإلكترونية", key: "shopify" },
+            { name: "Stripe", description: "معالجة الدفع", key: "stripe" }
+          ]
+        },
+        {
+          category: "التصميم والنماذج الأولية",
+          items: [
+            { name: "Figma", description: "أداة تصميم UI/UX", key: "figma" },
+            { name: "Adobe XD", description: "التصميم والنماذج الأولية", key: "xd" }
+          ]
+        },
+        {
+          category: "DevOps والاستضافة",
+          items: [
+            { name: "Vercel", description: "منصة النشر", key: "vercel" },
+            { name: "Docker", description: "الحاويات", key: "docker" },
+            { name: "AWS", description: "البنية التحتية السحابية", key: "aws" },
+            { name: "Git", description: "التحكم في الإصدار", key: "git" }
+          ]
+        },
+        {
+          category: "SEO والتحليلات",
+          items: [
+            { name: "Google Analytics", description: "تحليلات الويب", key: "ga" },
+            { name: "Semrush", description: "أدوات SEO", key: "semrush" },
+            { name: "Google Search Console", description: "أداء البحث", key: "gsc" }
+          ]
+        }
+      ]
+    },
+    ku: {
+      heroBadge: "تەکنەلۆژیا و ئامرازەکان",
+      heroTitle: "تەکنەلۆژیای نوێ بۆ پڕۆژەی دیجیتاڵەکەت",
+      heroDesc:
+        "ئێمە لەگەڵ باشترین ئامراز و فرەیمەکانی پیشەسازی کاردەکەین. لە React و Next.js تا Python و Shopify - کۆمەڵەی تەکنیکیمان باشکراوە بۆ کارایی و پەرەپێدان و ئەزموونی گەشەپێدەر.",
+      servicesTitle: "خزمەتگوزارییەکانمان",
+      servicesSubtitle: "چارەسەری تایبەت لەگەڵ تەکنەلۆژیای نوێ",
+      ctaTitle: "ئامادەیت بۆ تەکنەلۆژیای نوێ؟",
+      ctaDesc:
+        "با پڕۆژەکەت پێکەوە بنیات بنێین بە باشترین ئامراز و فرەیمەکان.",
+      ctaPrimary: "پڕۆژە باس بکە",
+      ctaSecondary: "گەڕانەوە بۆ سەرەتا",
+      services: [
+        {
+          title: "دیزاینی وێب و لاپەڕەکانی فڕینە",
+          description: "ماڵپەڕی نوێ و خێرا لەگەڵ Next.js و React",
+          link: "/leistungen/webentwicklung/website",
+          techs: ["Next.js", "React", "TypeScript", "Tailwind CSS"]
+        },
+        {
+          title: "بازرگانی ئەلیکترۆنی و فرۆشگای ئۆنلاین",
+          description: "فرۆشگاکانی پشتبەستوو بە Shopify لەگەڵ کەڵەکی پێشەوە جیاکراوە",
+          link: "/leistungen/webentwicklung/onlineshop",
+          techs: ["Shopify", "Next.js", "Stripe", "PostgreSQL"]
+        },
+        {
+          title: "بەرنامەکانی وێب",
+          description: "سیستەمی پشتەوە لەگەڵ Python",
+          link: "/leistungen/webentwicklung/python-web-apps",
+          techs: ["Python", "Django", "FastAPI", "PostgreSQL", "MongoDB"]
+        },
+        {
+          title: "دیزاینی UI/UX",
+          description: "لێکۆڵینەوەی بەکارهێنەر، نموونەسازی، سیستەمی دیزاین",
+          link: "/leistungen/webentwicklung/ui-ux-design",
+          techs: ["Figma", "Adobe XD", "Design Systems"]
+        },
+        {
+          title: "SEO و کارایی",
+          description: "SEO ی تەکنیکی، ستراتیژی ناوەڕۆک، شیکاری",
+          link: "/leistungen/seo",
+          techs: ["Google Analytics", "Semrush", "Search Console"]
+        }
+      ],
+      categories: [
+        {
+          category: "فرەیمی کەڵەکی پێشەوە",
+          items: [
+            { name: "Next.js", description: "فرەیمی React بۆ بەرهەمهێنان", key: "nextjs" },
+            { name: "React", description: "کتێبخانەی UI بۆ بەرنامەکانی وێبی نوێ", key: "react" },
+            { name: "TypeScript", description: "JavaScript ی سەلامەتی جۆر", key: "typescript" },
+            { name: "Tailwind CSS", description: "فرەیمی CSS یەکەم-ئامراز", key: "tailwind" }
+          ]
+        },
+        {
+          category: "پشتەوە و بنکەی دراوە",
+          items: [
+            { name: "Python", description: "Django, FastAPI, Flask", key: "python" },
+            { name: "Node.js", description: "کاتی کارپێکردنی JavaScript", key: "node" },
+            { name: "PostgreSQL", description: "بنکەی دراوەی پەیوەندیدار", key: "postgres" },
+            { name: "MongoDB", description: "بنکەی دراوەی NoSQL", key: "mongo" }
+          ]
+        },
+        {
+          category: "بازرگانی ئەلیکترۆنی",
+          items: [
+            { name: "Shopify", description: "سەکۆی بازرگانی ئەلیکترۆنی", key: "shopify" },
+            { name: "Stripe", description: "پرۆسەی پارەدان", key: "stripe" }
+          ]
+        },
+        {
+          category: "دیزاین و نموونەسازی",
+          items: [
+            { name: "Figma", description: "ئامرازی دیزاینی UI/UX", key: "figma" },
+            { name: "Adobe XD", description: "دیزاین و نموونەسازی", key: "xd" }
+          ]
+        },
+        {
+          category: "DevOps و میوانداری",
+          items: [
+            { name: "Vercel", description: "سەکۆی بڵاوکردنەوە", key: "vercel" },
+            { name: "Docker", description: "کۆنتەینەرکردن", key: "docker" },
+            { name: "AWS", description: "ژێرخانی هەور", key: "aws" },
+            { name: "Git", description: "کۆنترۆڵی وەشان", key: "git" }
+          ]
+        },
+        {
+          category: "SEO و شیکاری",
+          items: [
+            { name: "Google Analytics", description: "شیکاری وێب", key: "ga" },
+            { name: "Semrush", description: "ئامرازەکانی SEO", key: "semrush" },
+            { name: "Google Search Console", description: "کارایی گەڕان", key: "gsc" }
+          ]
+        }
+      ]
     }
   } as const;
 
-  // Fallback to 'en' for languages not yet translated
-  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
-  const t = content[contentLanguage as keyof typeof content];
+  const t = content[language as keyof typeof content];
 
   const technologies = t.categories.map((category) => ({
     category: category.category,

@@ -325,12 +325,128 @@ const translations = {
     "home.hero.cta2": "اكتشف الخدمات",
     "home.hero.imageAlt": "خلفية مشروع تكنولوجيا المعلومات",
     
+    // Services Section
     "home.services.title": "خدماتنا",
     "home.services.subtitle": "حلول رقمية مخصصة لعملك",
+    
     "home.service1.title": "تصميم الويب والصفحات المقصودة",
+    "home.service1.desc": "مواقع ويب حديثة وسريعة مع Next.js و React. محسّنة للأداء، جاهزة لـ SEO، ومُنفّذة بدقة البكسل.",
     "home.service1.cta": "اعرف المزيد",
+    "home.service1.hl1": "Next.js",
+    "home.service1.hl2": "متجاوب",
+    "home.service1.hl3": "Core Web Vitals",
+    
+    "home.service2.title": "التجارة الإلكترونية والمتاجر عبر الإنترنت",
+    "home.service2.desc": "متاجر قائمة على Shopify مع واجهة أمامية منفصلة. محسّنة للتحويل وقابلة للتوسع لنموك.",
+    "home.service2.cta": "اعرف المزيد",
+    "home.service2.hl1": "Shopify",
+    "home.service2.hl2": "الدفع",
+    "home.service2.hl3": "SEO المنتج",
+    
+    "home.service3.title": "تطبيقات الويب",
+    "home.service3.desc": "أنظمة خلفية مع Python (Django/FastAPI). واجهات برمجة تطبيقات آمنة وبنيات قواعد بيانات للمتطلبات المعقدة.",
+    "home.service3.cta": "اعرف المزيد",
+    "home.service3.hl1": "Django",
+    "home.service3.hl2": "FastAPI",
+    "home.service3.hl3": "البيانات والـ APIs",
+    
+    "home.service4.title": "تصميم UI/UX",
+    "home.service4.desc": "بحث المستخدم، النماذج الأولية، وأنظمة التصميم. واجهات يحبها المستخدمون وتزيد من التحويلات.",
+    "home.service4.cta": "اعرف المزيد",
+    "home.service4.hl1": "بحث المستخدم",
+    "home.service4.hl2": "النماذج الأولية",
+    "home.service4.hl3": "نظام التصميم",
+    
+    "home.service5.title": "SEO والأداء",
+    "home.service5.desc": "SEO التقني، استراتيجية المحتوى، و Core Web Vitals. المزيد من الرؤية وترتيب أفضل.",
+    "home.service5.cta": "اعرف المزيد",
+    "home.service5.hl1": "على الصفحة",
+    "home.service5.hl2": "تقني",
+    "home.service5.hl3": "SEO محلي",
+
+    // Homepage Trust & Highlights
+    "home.trust": "موثوق به من قبل الفرق التي تريد النمو",
+    "home.highlight1.title": "حضور العلامة التجارية الأنيق",
+    "home.highlight1.desc": "نبني مواقع ويب تبدو متميزة وتقدم أداءً قابلاً للقياس.",
+    "home.highlight1.imageAlt": "العلامة التجارية وتصميم الويب",
+    "home.highlight2.title": "التركيز على النتائج",
+    "home.highlight2.desc": "من الفكرة إلى الإطلاق - عمليات واضحة وتنفيذ سريع.",
+    "home.highlight2.imageAlt": "الفريق في العمل",
+
+    // Services Overview (Homepage)
+    "home.services.kicker": "الخدمات",
+    "home.services.heading": "حلول لحضور رقمي قوي",
+    "home.services.desc": "من الفكرة الأولى إلى الإطلاق، نرشدك بعملية واضحة ونتائج قابلة للقياس.",
+    "home.services.ctaLink": "ناقش مشروعك ←",
+
+    // Process Section
+    "home.process.kicker": "العملية",
+    "home.process.title": "عملية واضحة، نتائج قابلة للقياس",
+    "home.process.desc": "نجمع بين الاستراتيجية والتصميم والهندسة - ونقدم إطلاقاً لا يبدو رائعاً فحسب، بل يؤدي أيضاً.",
+    "home.process.step": "الخطوة",
+    "home.process.step1.title": "البداية والوضوح",
+    "home.process.step1.desc": "نحدد الأهداف والجمهور والتمايز - حتى تُظهر كل صفحة تأثيراً.",
+    "home.process.step2.title": "التصميم والنموذج الأولي",
+    "home.process.step2.desc": "مسودات تفاعلية، تدفقات UX واضحة، وحلقات ملاحظات تمكّن من اتخاذ قرارات سريعة.",
+    "home.process.step3.title": "البناء والإطلاق",
+    "home.process.step3.desc": "كود نظيف، تحسين الأداء، وإطلاق يقدم نتائج قابلة للقياس.",
+
+    // Contact Section
+    "home.contact.kicker": "اتصل",
+    "home.contact.title": "هل أنت مستعد للخطوة الرقمية التالية؟",
+    "home.contact.desc": "أخبرنا عن مشروعك - سنعود إليك خلال 24 ساعة بخارطة طريق واضحة وملاحظات صادقة.",
+    "home.contact.location": "هانوفر · غاربسن · عن بعد",
+    "home.contact.email": "hassan19775113@outlook.com",
+    "home.contact.phone": "+49 173 4946526",
+
+    // Contact Form
+    "home.form.title": "استفسار المشروع",
+    "home.form.desc": "أرسل لنا رسالة موجزة - سنرد شخصياً.",
+    "home.form.name": "الاسم والشركة",
+    "home.form.email": "عنوان البريد الإلكتروني",
+    "home.form.message": "وصف المشروع",
+    "home.form.submit": "إرسال الاستفسار",
+    "home.form.consent": "بالإرسال، توافق على الاتصال بك.",
+
+    // Stats
+    "home.stats.exp": "سنوات من الخبرة",
+    "home.stats.projects": "مشاريع ناجحة",
+    "home.stats.launch": "متوسط وقت الإطلاق",
+    "home.stats.launchValue": "6 أسابيع",
+    
+    // Why Choose Us
+    "home.why.title": "لماذا Primewave؟",
+    "home.why.subtitle": "شريكك للتميز الرقمي",
+    
+    "home.why1.title": "تقنيات حديثة",
+    "home.why1.desc": "Next.js، React، Python - نعتمد على مجموعات تقنية مثبتة ومستقبلية.",
+    
+    "home.why2.title": "الأداء أولاً",
+    "home.why2.desc": "أوقات تحميل سريعة، Core Web Vitals محسّنة، وتجربة مستخدم من الدرجة الأولى.",
+    
+    "home.why3.title": "محسّن لـ SEO",
+    "home.why3.desc": "SEO التقني من البداية - لترتيب أفضل والمزيد من حركة المرور العضوية.",
+    
+    "home.why4.title": "شفاف وعادل",
+    "home.why4.desc": "تواصل واضح، أسعار عادلة، واستشارة صادقة بدون تكاليف خفية.",
+    
+    "home.why5.title": "نتائج قابلة للقياس",
+    "home.why5.desc": "تتبع التحويل، إعداد التحليلات، والتحسينات المستندة إلى البيانات.",
+    
+    "home.why6.title": "شراكة طويلة الأمد",
+    "home.why6.desc": "ندعمك حتى بعد الإطلاق - مع الدعم والصيانة والتطوير المستمر.",
+    
+    // CTA Section
     "home.cta.title": "هل أنت مستعد لمشروعك الرقمي؟",
+    "home.cta.description": "دعنا نتحدث عن أهدافك في استشارة أولية مجانية. معاً، سنطور الحل المثالي لعملك.",
     "home.cta.button": "ابدأ مشروعك الآن",
+    
+    // Footer
+    "footer.company": "الشركة",
+    "footer.services": "الخدمات",
+    "footer.legal": "قانوني",
+    "footer.imprint": "بيانات النشر",
+    "footer.privacy": "الخصوصية",
     "footer.rights": "جميع الحقوق محفوظة.",
   },
   ku: {
@@ -354,12 +470,128 @@ const translations = {
     "home.hero.cta2": "خزمەتگوزارییەکان بزانە",
     "home.hero.imageAlt": "پاشبنەمای پڕۆژەی IT",
     
+    // Services Section
     "home.services.title": "خزمەتگوزارییەکانمان",
     "home.services.subtitle": "چارەسەری دیجیتاڵی تایبەت بۆ بازرگانیەکەت",
+    
     "home.service1.title": "دیزاینی وێب و لاپەڕەکانی فڕینە",
+    "home.service1.desc": "ماڵپەڕی نوێ و خێرا لەگەڵ Next.js و React. باشکراو بۆ کارایی، ئامادەی SEO، و جێبەجێکراوی بە وردی پیکسەل.",
     "home.service1.cta": "زیاتر بزانە",
+    "home.service1.hl1": "Next.js",
+    "home.service1.hl2": "وەڵامدەرەوە",
+    "home.service1.hl3": "Core Web Vitals",
+    
+    "home.service2.title": "بازرگانی ئەلیکترۆنی و فرۆشگای ئۆنلاین",
+    "home.service2.desc": "فرۆشگاکانی پشتبەستوو بە Shopify لەگەڵ کەڵەکی پێشەوە جیاکراوە. باشکراو بۆ گۆڕین و پەرەپێدانی بۆ گەشەکردنت.",
+    "home.service2.cta": "زیاتر بزانە",
+    "home.service2.hl1": "Shopify",
+    "home.service2.hl2": "پارەدان",
+    "home.service2.hl3": "SEO ی بەرهەم",
+    
+    "home.service3.title": "بەرنامەکانی وێب",
+    "home.service3.desc": "سیستەمی پشتەوە لەگەڵ Python (Django/FastAPI). APIـی سەلامەت و تەلارسازیی بنکەی دراوە بۆ پێداویستیە ئاڵۆزەکان.",
+    "home.service3.cta": "زیاتر بزانە",
+    "home.service3.hl1": "Django",
+    "home.service3.hl2": "FastAPI",
+    "home.service3.hl3": "دراوە و APIـەکان",
+    
+    "home.service4.title": "دیزاینی UI/UX",
+    "home.service4.desc": "لێکۆڵینەوەی بەکارهێنەر، نموونەی سەرەتایی، و سیستەمی دیزاین. ڕووکارەکان کە بەکارهێنەران حەزیان لێیە و گۆڕان زیاد دەکەن.",
+    "home.service4.cta": "زیاتر بزانە",
+    "home.service4.hl1": "لێکۆڵینەوەی بەکارهێنەر",
+    "home.service4.hl2": "نموونەسازی",
+    "home.service4.hl3": "سیستەمی دیزاین",
+    
+    "home.service5.title": "SEO و کارایی",
+    "home.service5.desc": "SEO ی تەکنیکی، ستراتیژی ناوەڕۆک، و Core Web Vitals. بینینی زیاتر و پلەبەندی باشتر.",
+    "home.service5.cta": "زیاتر بزانە",
+    "home.service5.hl1": "لەسەر لاپەڕە",
+    "home.service5.hl2": "تەکنیکی",
+    "home.service5.hl3": "SEO ی ناوچەیی",
+
+    // Homepage Trust & Highlights
+    "home.trust": "متمانەپێکراو لەلایەن تیمەکانەوە کە دەیانەوێت گەشە بکەن",
+    "home.highlight1.title": "ئامادەبوونی مارکای جوان",
+    "home.highlight1.desc": "ئێمە ماڵپەڕەکان دروست دەکەین کە وەک پرێمیۆم دەردەکەون و کاراییەکی پێوانی دەبەخشن.",
+    "home.highlight1.imageAlt": "مارکە و دیزاینی وێب",
+    "home.highlight2.title": "سەرنج لەسەر ئەنجام",
+    "home.highlight2.desc": "لە بیرۆکەوە بۆ دەستپێکردن - پرۆسەی ڕوون و جێبەجێکردنی خێرا.",
+    "home.highlight2.imageAlt": "تیم لە کار",
+
+    // Services Overview (Homepage)
+    "home.services.kicker": "خزمەتگوزارییەکان",
+    "home.services.heading": "چارەسەر بۆ ئامادەبوونی دیجیتاڵی بەهێز",
+    "home.services.desc": "لە بیرۆکەی یەکەمەوە تا بردنە ژیان، ئێمە ڕێنماییت دەکەین بە پرۆسەیەکی ڕوون و ئەنجامی پێوان.",
+    "home.services.ctaLink": "پڕۆژەکەت باس بکە ←",
+
+    // Process Section
+    "home.process.kicker": "پرۆسە",
+    "home.process.title": "پرۆسەی ڕوون، ئەنجامی پێوان",
+    "home.process.desc": "ئێمە ستراتیژی و دیزاین و ئەندازیاری تێکەڵ دەکەین - و دەستپێکردنێک دەگەیەنین کە نەک تەنها جوان دەردەکەوێت، بەڵکو کارایی هەیە.",
+    "home.process.step": "هەنگاو",
+    "home.process.step1.title": "دەستپێکردن و ڕوونی",
+    "home.process.step1.desc": "ئێمە ئامانج و بینەر و جیاوازی پێناسە دەکەین - بۆ ئەوەی هەر لاپەڕەیەک کاریگەری نیشان بدات.",
+    "home.process.step2.title": "دیزاین و نموونە",
+    "home.process.step2.desc": "ڕەشنووسی کارلێککەر، ڕەوتی UX ڕوون، و خولی فیدباک ڕێگە بە بڕیارە خێراکان دەدەن.",
+    "home.process.step3.title": "بنیاتنان و دەستپێکردن",
+    "home.process.step3.desc": "کۆدی پاک، باشکردنی کارایی، و دەستپێکردنێک کە ئەنجامی پێوان دەبەخشێت.",
+
+    // Contact Section
+    "home.contact.kicker": "پەیوەندی",
+    "home.contact.title": "ئامادەیت بۆ هەنگاوی دیجیتاڵی داهاتوو؟",
+    "home.contact.desc": "باسی پڕۆژەکەت بۆمان بکە - ئێمە لە ماوەی 24 کاتژمێر وەڵامت دەدەینەوە لەگەڵ نەخشەی ڕێگای ڕوون و فیدباکی ڕاستگۆیانە.",
+    "home.contact.location": "هانۆڤەر · گاربسن · دوور",
+    "home.contact.email": "hassan19775113@outlook.com",
+    "home.contact.phone": "+49 173 4946526",
+
+    // Contact Form
+    "home.form.title": "پرسیاری پڕۆژە",
+    "home.form.desc": "پەیامێکی کورتمان بۆ بنێرە - ئێمە بە تایبەت وەڵام دەدەینەوە.",
+    "home.form.name": "ناو و کۆمپانیا",
+    "home.form.email": "ناونیشانی ئیمەیڵ",
+    "home.form.message": "وەسفی پڕۆژە",
+    "home.form.submit": "پرسیار بنێرە",
+    "home.form.consent": "بە ناردن، ڕازیت بە پەیوەندیکردن.",
+
+    // Stats
+    "home.stats.exp": "ساڵی ئەزموون",
+    "home.stats.projects": "پڕۆژەی سەرکەوتوو",
+    "home.stats.launch": "کاتی دەستپێکردنی ناوەند",
+    "home.stats.launchValue": "6 هەفتە",
+    
+    // Why Choose Us
+    "home.why.title": "بۆچی Primewave؟",
+    "home.why.subtitle": "هاوبەشەکەت بۆ باشی دیجیتاڵ",
+    
+    "home.why1.title": "تەکنەلۆژیای نوێ",
+    "home.why1.desc": "Next.js، React، Python - ئێمە پشت بە کۆمەڵە تەکنیکیی سەلمێنراو و داهاتووپێکراو دەبەستین.",
+    
+    "home.why2.title": "کارایی یەکەم",
+    "home.why2.desc": "کاتی بارکردنی خێرا، Core Web Vitals باشکراو، و ئەزموونی بەکارهێنەری پلەی یەکەم.",
+    
+    "home.why3.title": "باشکراو بۆ SEO",
+    "home.why3.desc": "SEO ی تەکنیکی لە سەرەتاوە - بۆ پلەبەندی باشتر و هاتووچۆی ئۆرگانیکی زیاتر.",
+    
+    "home.why4.title": "ڕوون و دادپەروەرانە",
+    "home.why4.desc": "پەیوەندی ڕوون، نرخی دادپەروەرانە، و ڕاوێژکاری ڕاستگۆیانە بەبێ تێچووی شاراوە.",
+    
+    "home.why5.title": "ئەنجامی پێوان",
+    "home.why5.desc": "شوێنکەوتنی گۆڕین، ڕێکخستنی شیکاری، و باشکردنی پشتبەستوو بە دراوە.",
+    
+    "home.why6.title": "هاوبەشی درێژخایەن",
+    "home.why6.desc": "ئێمە پشتگیریت دەکەین تەنانەت لە دوای دەستپێکردنیش - لەگەڵ پشتگیری و چاککردنەوە و گەشەپێدانی بەردەوام.",
+    
+    // CTA Section
     "home.cta.title": "ئامادەیت بۆ پڕۆژەی دیجیتاڵەکەت؟",
+    "home.cta.description": "با لەبارەی ئامانجەکانت بدوێین لە ڕاوێژکاریی سەرەتایی بەخۆڕایی. پێکەوە، چارەسەری تەواو گەشە پێدەدەین بۆ بازرگانیەکەت.",
     "home.cta.button": "ئێستا پڕۆژەکەت دەست پێبکە",
+    
+    // Footer
+    "footer.company": "کۆمپانیا",
+    "footer.services": "خزمەتگوزارییەکان",
+    "footer.legal": "یاسایی",
+    "footer.imprint": "زانیاری بڵاوکردنەوە",
+    "footer.privacy": "تایبەتمەندی",
     "footer.rights": "هەموو مافەکان پارێزراون.",
   }
 };

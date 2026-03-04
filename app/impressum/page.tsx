@@ -107,14 +107,38 @@ const content = {
       text2: "Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. If we become aware of legal violations, we will remove such content immediately."
     },
     backButton: "Back to Homepage"
+  },
+  ar: {
+    title: "بيانات النشر",
+    section1: { title: "معلومات وفقاً لـ § 5 TMG", company: "Primewave IT Solution", address1: "Musterstraße 123", address2: "12345 Musterstadt", country: "ألمانيا" },
+    section2: { title: "اتصل", phone: "الهاتف: +49 (0) 123 456789", email: "البريد الإلكتروني: info@primewave-it.de" },
+    section3: { title: "معرف ضريبة القيمة المضافة", desc: "رقم تعريف ضريبة القيمة المضافة وفقاً لـ § 27 a قانون ضريبة القيمة المضافة:", number: "DE123456789" },
+    section4: { title: "المسؤول عن المحتوى وفقاً لـ § 55 Abs. 2 RStV", name: "Max Mustermann", address1: "Musterstraße 123", address2: "12345 Musterstadt" },
+    section5: { title: "حل نزاعات الاتحاد الأوروبي", text1: "توفر المفوضية الأوروبية منصة لحل النزاعات عبر الإنترنت (ODR):", text2: "يمكنك العثور على عنوان بريدنا الإلكتروني أعلاه في بيانات النشر." },
+    section6: { title: "حل نزاعات المستهلك", text: "نحن لسنا راغبين ولا ملزمين بالمشاركة في إجراءات حل النزاعات أمام مجلس تحكيم المستهلك." },
+    section7: { title: "المسؤولية عن المحتوى", text1: "بصفتنا مزود خدمة، نحن مسؤولون عن محتوانا الخاص على هذه الصفحات.", text2: "تبقى الالتزامات بإزالة أو حظر استخدام المعلومات غير متأثرة بهذا." },
+    section8: { title: "المسؤولية عن الروابط", text1: "يحتوي عرضنا على روابط لمواقع ويب خارجية تابعة لأطراف ثالثة ليس لدينا أي تأثير على محتواها.", text2: "تم فحص الصفحات المرتبطة بحثاً عن انتهاكات قانونية محتملة في وقت الربط." },
+    section9: { title: "حقوق النشر", text1: "يخضع المحتوى والأعمال التي أنشأها مشغلو الموقع على هذه الصفحات لقانون حقوق النشر الألماني.", text2: "بقدر ما لم يتم إنشاء المحتوى على هذا الموقع من قبل المشغل، يتم احترام حقوق النشر للأطراف الثالثة." },
+    backButton: "العودة إلى الصفحة الرئيسية"
+  },
+  ku: {
+    title: "زانیاری بڵاوکردنەوە",
+    section1: { title: "زانیاری بەپێی § 5 TMG", company: "Primewave IT Solution", address1: "Musterstraße 123", address2: "12345 Musterstadt", country: "ئەڵمانیا" },
+    section2: { title: "پەیوەندی", phone: "تەلەفۆن: +49 (0) 123 456789", email: "ئیمەیڵ: info@primewave-it.de" },
+    section3: { title: "ناسنامەی VAT", desc: "ژمارەی ناسنامەی VAT بەپێی § 27 a یاسای باجی VAT:", number: "DE123456789" },
+    section4: { title: "بەرپرسیار بۆ ناوەڕۆک بەپێی § 55 Abs. 2 RStV", name: "Max Mustermann", address1: "Musterstraße 123", address2: "12345 Musterstadt" },
+    section5: { title: "چارەسەری ناکۆکی یەکێتی ئەورووپا", text1: "کۆمسیۆنی ئەورووپی سەکۆیەک دابین دەکات بۆ چارەسەری ناکۆکی سەرهێڵ:", text2: "دەتوانیت ناونیشانی ئیمەیڵمان لە سەرەوە لە زانیاری بڵاوکردنەوەدا بدۆزیتەوە." },
+    section6: { title: "چارەسەری ناکۆکی بەکاربەر", text: "ئێمە نە ئامادەین و نە پابەندین بە بەشداریکردن لە پرۆسەی چارەسەری ناکۆکی بەردەم دەستەی دادوەری بەکاربەر." },
+    section7: { title: "بەرپرسیاریەتی بۆ ناوەڕۆک", text1: "وەک دابینکەری خزمەتگوزاری، ئێمە بەرپرسیارین بۆ ناوەڕۆکی خۆمان لەسەر ئەم لاپەڕانە.", text2: "پابەندبوونەکان بۆ لابردن یان بلۆککردنی بەکارهێنانی زانیاری بە یاسا گشتییەکان دەمێنێتەوە." },
+    section8: { title: "بەرپرسیاریەتی بۆ بەستەرەکان", text1: "پێشکەشکردنەکەمان بەستەری ماڵپەڕی دەرەکی لایەنی سێیەم لەخۆدەگرێت کە هیچ کاریگەریمان لەسەر ناوەڕۆکیان نییە.", text2: "لاپەڕە بەستراوەکان پشکنرا بۆ پێشێلکاریی یاسایی ئەگەری لە کاتی بەستنەوەدا." },
+    section9: { title: "مافی لەبەرگرتنەوە", text1: "ناوەڕۆک و کارەکان کە لەلایەن بەڕێوەبەرانی ماڵپەڕەوە دروست کراون لەسەر ئەم لاپەڕانە بەژێر یاسای مافی لەبەرگرتنەوەی ئەڵمانین.", text2: "بەو ڕادەیەی کە ناوەڕۆک لەسەر ئەم ماڵپەڕە لەلایەن بەڕێوەبەرەوە دروست نەکرابێت، ڕێز بۆ مافەکانی لەبەرگرتنەوەی لایەنی سێیەم دەگیرێت." },
+    backButton: "گەڕانەوە بۆ سەرەتا"
   }
 };
 
 export default function ImpressumPage() {
   const { language } = useLanguage();
-  // Fallback to 'en' for languages not yet translated
-  const contentLanguage = (language === "ar" || language === "ku") ? "en" : language;
-  const t = content[contentLanguage as keyof typeof content];
+  const t = content[language as keyof typeof content];
 
   return (
     <div className="relative min-h-screen bg-slate-50 text-slate-900">
